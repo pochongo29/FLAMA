@@ -1,0 +1,2652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Flama Restaurante — Chilpancingo, Guerrero. Cocina de fuego vivo, ingredientes de temporada y atmosfera intima. Reserva tu mesa hoy." />
+  <meta name="keywords" content="restaurante Chilpancingo, restaurante premium Guerrero, Flama restaurante, cena especial Chilpancingo, cocina de autor Guerrero" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Flama Restaurante" />
+  <link rel="canonical" href="https://flamarestaurante.mx/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type"        content="restaurant" />
+  <meta property="og:url"         content="https://flamarestaurante.mx/" />
+  <meta property="og:title"       content="Flama — Restaurante Premium en Chilpancingo" />
+  <meta property="og:description" content="Cocina de fuego vivo, atmosfera de selva tropical y muebles de piel. Una experiencia gastronómica que no olvidaras. Plaza Cardenas, Chilpancingo." />
+  <meta property="og:image"       content="https://flamarestaurante.mx/og-image.jpg" />
+  <meta property="og:locale"      content="es_MX" />
+  <meta property="og:site_name"   content="Flama Restaurante" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Flama — Restaurante Premium en Chilpancingo" />
+  <meta name="twitter:description" content="Cocina de fuego vivo, atmosfera de selva tropical y muebles de piel. Plaza Cardenas, Chilpancingo, Guerrero." />
+  <meta name="twitter:image"       content="https://flamarestaurante.mx/og-image.jpg" />
+
+  <!-- Schema.org: LocalBusiness / Restaurant -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Flama Restaurante",
+    "description": "Restaurante premium con cocina de fuego vivo, vegetacion tropical y muebles de piel. Experiencia gastronómica de autor en Chilpancingo, Guerrero.",
+    "url": "https://flamarestaurante.mx/",
+    "telephone": "+527471234567",
+    "priceRange": "$$$$",
+    "servesCuisine": ["Mexicana contemporanea", "Cocina de autor", "Parrilla"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plaza Cardenas Local E, Av. Lazaro Cardenas No. 71",
+      "addressLocality": "Chilpancingo de los Bravo",
+      "addressRegion": "Guerrero",
+      "postalCode": "39000",
+      "addressCountry": "MX"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 17.5506,
+      "longitude": -99.5001
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "13:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "13:00", "closes": "01:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "13:00", "closes": "21:00" }
+    ],
+    "hasMap": "https://maps.google.com/?q=Plaza+Cardenas+Av+Lazaro+Cardenas+71+Chilpancingo+Guerrero",
+    "sameAs": [
+      "https://www.instagram.com/flamarestaurante",
+      "https://www.facebook.com/flamarestaurante"
+    ]
+  }
+  </script>
+
+  <title>Flama — Restaurante Premium en Chilpancingo, Guerrero</title>
+
+  <!-- Google Fonts: Cormorant Garamond + Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ============================================================
+       VARIABLES GLOBALES
+       Edita aqui para cambiar toda la identidad visual de Flama.
+       ============================================================ */
+    :root {
+      /* --- Colores de fondo — selva nocturna Flama --- */
+      --color-bg:         #141A11;   /* verde selva muy oscuro — las paredes del restaurante */
+      --color-bg-2:       #1A2116;   /* fondo secundario */
+      --color-surface:    #22291B;   /* tarjetas — follaje denso */
+      --color-surface-2:  #2C3523;   /* hover — verde selva medio */
+
+      /* --- Paleta extraída de la foto real --- */
+      --color-olive:      #5A7A38;   /* verde hoja tropical viva — palmeras interiores */
+      --color-moss:       #3A5828;   /* verde selva profundo — fondo de vegetación */
+      --color-sage:       #7A9E52;   /* verde claro — hojas con luz filtrándose */
+      --color-beige:      #C4A882;   /* cuero claro — sillas gamuza camello */
+      --color-cream:      #EDE5D4;   /* crema cálida — texto principal, platos blancos */
+      --color-wood:       #7A4E28;   /* madera honey live-edge — la mesa */
+      --color-amber:      #C4802A;   /* luz ámbar cálida — iluminación de la barra */
+      --color-amber-light:#D9963C;   /* destellos dorados suaves */
+
+      /* --- Texto --- */
+      --color-text:       #EDE5D4;   /* crema cálida */
+      --color-text-muted: #A89878;   /* café claro — cuero envejecido */
+      --color-border:     rgba(90,122,56,0.18); /* bordes con toque verde selva */
+
+      /* --- Tipografia --- */
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', system-ui, sans-serif;
+
+      /* --- Espaciado --- */
+      --space-xs:  0.5rem;
+      --space-sm:  1rem;
+      --space-md:  2rem;
+      --space-lg:  4rem;
+      --space-xl:  6.5rem;
+      --space-2xl: 9rem;
+
+      /* --- Radios --- */
+      --radius-sm:  6px;
+      --radius-md:  12px;
+      --radius-lg:  18px;
+      --radius-xl:  28px;
+
+      /* --- Sombras (siempre en tono calido oscuro) --- */
+      --shadow-card:  0 4px 32px rgba(15,10,5,0.5);
+      --shadow-olive: 0 0 24px rgba(107,124,78,0.18);
+      --shadow-amber: 0 0 24px rgba(196,144,58,0.2);
+
+      /* --- Transicion global --- */
+      --transition: 0.35s ease;
+    }
+
+    /* ============================================================
+       RESET Y BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img  { max-width: 100%; height: auto; display: block; }
+    a    { color: inherit; text-decoration: none; }
+    ul   { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* Utilidad de revelado en scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+    .reveal-delay-4 { transition-delay: 0.44s; }
+    .reveal-delay-5 { transition-delay: 0.56s; }
+
+    /* Contenedor centrado */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Etiqueta decorativa de seccion */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Titulo de seccion */
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--color-cream);
+      letter-spacing: 0.01em;
+    }
+    .section-title span { color: var(--color-amber); font-style: italic; }
+
+    /* Separador decorativo */
+    .olive-line {
+      width: 48px;
+      height: 1px;
+      background: var(--color-olive);
+      margin: 1.25rem 0 2rem;
+      opacity: 0.7;
+    }
+    .olive-line.center { margin-left: auto; margin-right: auto; }
+
+    /* Boton primario: borde fino ambar, sin fill agresivo */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid var(--color-amber);
+      color: var(--color-amber);
+      background: transparent;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      min-height: 48px;
+    }
+    .btn-primary:hover {
+      background: var(--color-amber);
+      color: var(--color-bg);
+    }
+
+    /* Boton secundario: texto link elegante */
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.4rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+      min-height: 48px;
+    }
+    .btn-secondary::after {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+      transition: width var(--transition);
+    }
+    .btn-secondary:hover { color: var(--color-cream); }
+    .btn-secondary:hover::after { width: 28px; }
+
+    /* ============================================================
+       NAVEGACION
+       ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.4rem 1.5rem;
+      transition: background var(--transition), backdrop-filter var(--transition),
+                  box-shadow var(--transition), padding var(--transition);
+    }
+    .nav.scrolled {
+      background: rgba(15,14,11,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--color-border);
+      padding: 0.9rem 1.5rem;
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--color-cream);
+    }
+    /* Sin span de color en el logo — limpio y unitario */
+
+    .nav__links {
+      display: none;
+      gap: 2.5rem;
+    }
+    .nav__links a {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-amber);
+      transition: width var(--transition);
+    }
+    .nav__links a:hover { color: var(--color-cream); }
+    .nav__links a:hover::after { width: 100%; }
+
+    .nav__cta { display: none; }
+
+    /* Boton hamburguesa */
+    .nav__hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--color-cream);
+      transition: var(--transition);
+      transform-origin: center;
+    }
+    .nav__hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav__hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav__hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Menu movil overlay */
+    .nav__mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15,14,11,0.98);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .nav__mobile.open { display: flex; }
+    .nav__mobile a {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      letter-spacing: 0.04em;
+      transition: color var(--transition);
+    }
+    .nav__mobile a:hover { color: var(--color-cream); }
+    .nav__mobile .btn-primary {
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Canvas de particulas bokeh */
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Gradiente organico calido */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 20% 80%, rgba(107,124,78,0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 45% at 80% 30%, rgba(139,99,64,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 90% 70% at 50% 100%, rgba(26,24,18,0.8) 0%, transparent 80%),
+        linear-gradient(170deg, #0f0e0b 0%, #1a1812 45%, #0f0e0b 100%);
+    }
+
+    /* Overlay sutil para legibilidad del texto */
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+        rgba(15,14,11,0.2) 0%,
+        rgba(15,14,11,0.05) 40%,
+        rgba(15,14,11,0.55) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      padding: var(--space-lg) 1.5rem var(--space-md);
+      max-width: 680px;
+    }
+
+    .hero__eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+      display: block;
+      margin-bottom: 1.5rem;
+      animation: fadeDown 1s ease 0.2s both;
+    }
+
+    .hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.6rem, 8vw, 5.2rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--color-cream);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
+      animation: fadeDown 1s ease 0.4s both;
+    }
+    .hero__title em {
+      font-style: italic;
+      color: var(--color-amber-light);
+    }
+
+    .hero__sub {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 2.2vw, 1.05rem);
+      color: var(--color-text-muted);
+      font-weight: 300;
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      animation: fadeDown 1s ease 0.6s both;
+    }
+
+    .hero__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+      animation: fadeDown 1s ease 0.8s both;
+    }
+
+    /* Indicador de scroll */
+    .hero__scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: fadeDown 1s ease 1.2s both;
+    }
+    .hero__scroll span {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      opacity: 0.6;
+    }
+    .hero__scroll-line {
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(180deg, var(--color-olive), transparent);
+      animation: scrollPulse 2.4s ease infinite;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50%       { opacity: 0.8; transform: scaleY(1.2); }
+    }
+
+    /* ============================================================
+       SECCION: SOBRE FLAMA
+       ============================================================ */
+    .about {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg-2);
+    }
+
+    .about__inner {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .about__text { max-width: 580px; }
+
+    .about__desc {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .about__desc strong {
+      color: var(--color-cream);
+      font-weight: 400;
+    }
+
+    /* Cards de propuesta de valor */
+    .about__props {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .prop-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .prop-card:hover {
+      border-color: rgba(107,124,78,0.35);
+      background: var(--color-surface-2);
+    }
+
+    /* Icono como linea delgada de color oliva */
+    .prop-card__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(107,124,78,0.12);
+      border: 1px solid rgba(107,124,78,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      color: var(--color-olive);
+    }
+
+    .prop-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-cream);
+      margin-bottom: 3px;
+    }
+    .prop-card__desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+    }
+
+    /* Imagen decorativa del about — gradiente oliva/musgo organico */
+    .about__visual {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      min-height: 340px;
+      background:
+        radial-gradient(ellipse 60% 70% at 40% 60%, rgba(74,94,56,0.55) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 75% 25%, rgba(107,124,78,0.3) 0%, transparent 55%),
+        linear-gradient(145deg, #141810 0%, #1e2618 40%, #0f1209 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Reemplaza este div con una <img> cuando tengas fotos reales */
+    .about__visual-placeholder {
+      text-align: center;
+      padding: 2rem;
+    }
+    .about__visual-placeholder .icon {
+      font-size: 4rem;
+      opacity: 0.4;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .about__visual-placeholder p {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-beige);
+      opacity: 0.6;
+    }
+    /* Detalle decorativo — linea de luz lateral */
+    .about__visual::after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 0;
+      width: 1px;
+      height: 80%;
+      background: linear-gradient(180deg, transparent, rgba(138,158,106,0.3), transparent);
+    }
+
+    /* ============================================================
+       SECCION: PLATILLOS DESTACADOS
+       ============================================================ */
+    .dishes {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg);
+    }
+
+    .dishes__header { text-align: center; margin-bottom: 3.5rem; }
+
+    .dishes__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    /* Tarjeta de platillo */
+    .dish-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition),
+                  border-color var(--transition);
+    }
+    .dish-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(196,144,58,0.2);
+    }
+
+    /* Placeholder de imagen — reemplaza con <img loading="lazy"> */
+    .dish-card__img {
+      height: 210px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dish-card__img-label {
+      position: absolute;
+      font-size: 3.2rem;
+      opacity: 0.35;
+      transition: transform 0.4s ease;
+    }
+    .dish-card:hover .dish-card__img-label { transform: scale(1.08); }
+
+    .dish-card__badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(107,124,78,0.18);
+      border: 1px solid rgba(107,124,78,0.45);
+      color: var(--color-sage);
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .dish-card__body { padding: 1.2rem 1.4rem 1.4rem; }
+
+    .dish-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--color-cream);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+    }
+    .dish-card__desc {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .dish-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dish-card__price {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--color-amber);
+      letter-spacing: 0.01em;
+    }
+    .dish-card__tag {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Gradientes de platillos — paleta organica calida */
+    /* Cambia segun la foto real del platillo */
+    .dish-bg-1 { background: linear-gradient(145deg, #1a1209, #2e2010, #1a1209); }
+    .dish-bg-2 { background: linear-gradient(145deg, #0d1208, #1a2210, #0d1208); }
+    .dish-bg-3 { background: linear-gradient(145deg, #0e1210, #1a2018, #0e1210); }
+    .dish-bg-4 { background: linear-gradient(145deg, #18100a, #2a1c0e, #18100a); }
+    .dish-bg-5 { background: linear-gradient(145deg, #0f0e0d, #1e1c18, #0f0e0d); }
+    .dish-bg-6 { background: linear-gradient(145deg, #100f0a, #1e1c12, #100f0a); }
+
+    /* ============================================================
+       SECCION: MENU COMPLETO (TABS)
+       ============================================================ */
+    .menu {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg-2);
+    }
+
+    .menu__header { text-align: center; margin-bottom: 3.5rem; }
+
+    /* Tabs: underline elegante, sin pill agresivo */
+    .menu__tabs {
+      display: flex;
+      overflow-x: auto;
+      gap: 0;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 2.5rem;
+      scrollbar-width: none;
+    }
+    .menu__tabs::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      flex-shrink: 0;
+      padding: 0.75rem 1.6rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color var(--transition), border-color var(--transition);
+      min-height: 44px;
+      background: transparent;
+    }
+    .tab-btn.active {
+      color: var(--color-cream);
+      border-bottom-color: var(--color-amber);
+    }
+    .tab-btn:hover:not(.active) { color: var(--color-cream); }
+
+    .menu__panel { display: none; }
+    .menu__panel.active { display: block; }
+
+    .menu__list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .menu-item:last-child { border-bottom: none; }
+
+    .menu-item__info { flex: 1; }
+    .menu-item__name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-cream);
+      margin-bottom: 3px;
+      letter-spacing: 0.01em;
+    }
+    .menu-item__desc {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      line-height: 1.45;
+    }
+    .menu-item__price {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--color-amber-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       SECCION: GALERIA — Editorial con grid asimetrico
+       ============================================================ */
+    .gallery {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg);
+    }
+
+    .gallery__header { text-align: center; margin-bottom: 3.5rem; }
+
+    /* Grid asimetrico: 2 columnas en movil, hasta 4 en desktop */
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 200px;
+      gap: 5px;
+    }
+
+    /* Clases de tamanio */
+    .gallery__item--wide  { grid-column: span 2; }
+    .gallery__item--tall  { grid-row: span 2; }
+
+    .gallery__item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      isolation: isolate;
+    }
+
+    /* Placeholder visual — reemplaza con <img loading="lazy" src="..." alt="..."> */
+    .gallery__placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 180px;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      transition: transform 0.55s ease;
+    }
+    .gallery__item:hover .gallery__placeholder { transform: scale(1.04); }
+
+    /* Overlay con texto en hover */
+    .gallery__item::after {
+      content: attr(data-caption);
+      position: absolute;
+      inset: 0;
+      background: rgba(15,14,11,0);
+      color: var(--color-cream);
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.2rem;
+      opacity: 0;
+      transition: background 0.35s ease, opacity 0.35s ease;
+    }
+    .gallery__item:hover::after {
+      background: rgba(15,14,11,0.52);
+      opacity: 1;
+    }
+
+    /* Gradientes editoriales que evocan espacios y texturas */
+    /* gb-1: interior calido con luz ambar — sala principal */
+    .gb-1 {
+      background:
+        radial-gradient(ellipse 60% 70% at 30% 70%, rgba(139,99,64,0.6) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 75% 20%, rgba(196,144,58,0.3) 0%, transparent 55%),
+        linear-gradient(160deg, #1a140a 0%, #2a1e0e 50%, #1a140a 100%);
+    }
+    /* gb-2: vegetacion y jardin — verde musgo */
+    .gb-2 {
+      background:
+        radial-gradient(ellipse 70% 60% at 40% 60%, rgba(74,94,56,0.7) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 80% 30%, rgba(107,124,78,0.4) 0%, transparent 55%),
+        linear-gradient(150deg, #0d1209 0%, #1a2012 50%, #0d1209 100%);
+    }
+    /* gb-3: madera y materiales calidos */
+    .gb-3 {
+      background:
+        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(139,99,64,0.5) 0%, transparent 65%),
+        linear-gradient(135deg, #160f08 0%, #2a1c0e 60%, #160f08 100%);
+    }
+    /* gb-4: mesa servida — luz cenital */
+    .gb-4 {
+      background:
+        radial-gradient(ellipse 50% 60% at 50% 30%, rgba(212,168,85,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 50% 80%, rgba(34,31,24,0.9) 0%, transparent 70%),
+        linear-gradient(175deg, #18160f 0%, #221f15 100%);
+    }
+    /* gb-5: copa de vino — luz dramática lateral */
+    .gb-5 {
+      background:
+        radial-gradient(ellipse 40% 80% at 70% 50%, rgba(107,124,78,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 20% 60%, rgba(196,144,58,0.2) 0%, transparent 55%),
+        linear-gradient(145deg, #0f0e0b 0%, #1e1c14 100%);
+    }
+    /* gb-6: arquitectura — espacios abiertos, luz suave */
+    .gb-6 {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 40%, rgba(200,185,154,0.12) 0%, transparent 65%),
+        linear-gradient(170deg, #14130f 0%, #1e1c15 50%, #14130f 100%);
+    }
+    /* gb-7: detalle de platillo — fondo neutral oscuro */
+    .gb-7 {
+      background:
+        radial-gradient(ellipse 55% 55% at 45% 55%, rgba(139,99,64,0.35) 0%, transparent 60%),
+        linear-gradient(135deg, #100f0a 0%, #1e1b12 60%, #100f0a 100%);
+    }
+    /* gb-8: luz ambar nocturna */
+    .gb-8 {
+      background:
+        radial-gradient(ellipse 60% 60% at 55% 45%, rgba(196,144,58,0.28) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(139,99,64,0.2) 0%, transparent 50%),
+        linear-gradient(155deg, #15120a 0%, #22180d 60%, #15120a 100%);
+    }
+    /* gb-9: espacio verde — terraza o jardin */
+    .gb-9 {
+      background:
+        radial-gradient(ellipse 70% 60% at 35% 65%, rgba(74,94,56,0.55) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 45% at 75% 30%, rgba(107,124,78,0.3) 0%, transparent 55%),
+        linear-gradient(145deg, #0e1208 0%, #1a1f10 60%, #0e1208 100%);
+    }
+
+    /* ============================================================
+       SECCION: TESTIMONIOS
+       ============================================================ */
+    .testimonials {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg-2);
+    }
+
+    .testimonials__header { text-align: center; margin-bottom: 3.5rem; }
+
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .testimonial-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: relative;
+      transition: border-color var(--transition);
+    }
+    .testimonial-card:hover { border-color: rgba(107,124,78,0.28); }
+
+    /* Comilla decorativa — elegante y tenue */
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 1rem;
+      left: 1.8rem;
+      font-family: var(--font-heading);
+      font-size: 4.5rem;
+      color: var(--color-olive);
+      line-height: 1;
+      opacity: 0.18;
+    }
+
+    /* Separador oliva */
+    .testimonial-card__sep {
+      width: 32px;
+      height: 1px;
+      background: var(--color-olive);
+      opacity: 0.5;
+      margin-bottom: 1.2rem;
+    }
+
+    .testimonial-card__stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1rem;
+    }
+    .star { color: var(--color-amber); font-size: 0.9rem; }
+
+    .testimonial-card__text {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .testimonial-card__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-moss), var(--color-olive));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--color-cream);
+      flex-shrink: 0;
+    }
+    .testimonial-card__name {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--color-cream);
+    }
+    .testimonial-card__handle {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+    }
+
+    /* ============================================================
+       SECCION: UBICACION Y HORARIOS
+       ============================================================ */
+    .location {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg);
+    }
+
+    .location__inner {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    /* Placeholder del mapa — gradiente que evoca vista calida */
+    .map-placeholder {
+      width: 100%;
+      min-height: 320px;
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(ellipse 70% 60% at 45% 55%, rgba(107,124,78,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 75% 25%, rgba(196,144,58,0.12) 0%, transparent 50%),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 32px,
+          rgba(200,185,154,0.03) 32px,
+          rgba(200,185,154,0.03) 33px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 32px,
+          rgba(200,185,154,0.03) 32px,
+          rgba(200,185,154,0.03) 33px
+        ),
+        linear-gradient(145deg, #141310 0%, #1e1c16 100%);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Pin de ubicacion estilizado */
+    .map-placeholder__pin {
+      width: 40px;
+      height: 40px;
+      background: var(--color-olive);
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      box-shadow: var(--shadow-olive);
+      margin-bottom: 0.5rem;
+    }
+    .map-placeholder__label {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-cream);
+      font-style: italic;
+    }
+    .map-placeholder__address {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      max-width: 260px;
+      line-height: 1.6;
+    }
+    .map-placeholder__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+      transition: color var(--transition);
+    }
+    .map-placeholder__link:hover { color: var(--color-sage); }
+
+    /* Info de contacto */
+    .location__detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .location__detail-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 32px;
+      height: 32px;
+      background: rgba(107,124,78,0.1);
+      border: 1px solid rgba(107,124,78,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-olive);
+    }
+    .location__detail-title {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+      margin-bottom: 4px;
+    }
+    .location__detail-text {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--color-cream);
+      line-height: 1.55;
+    }
+
+    /* Tabla de horarios */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .hours-table tr {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .hours-table tr:last-child { border-bottom: none; }
+    .hours-table tr:nth-child(even) td {
+      background: rgba(200,185,154,0.03);
+    }
+    .hours-table td {
+      padding: 0.65rem 0;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+    }
+    .hours-table td:last-child {
+      text-align: right;
+      color: var(--color-amber-light);
+      font-weight: 400;
+    }
+    .hours-table .today td { color: var(--color-cream); font-weight: 400; }
+    .hours-table .today td:last-child { color: var(--color-sage); }
+    .closed-day td { opacity: 0.4; }
+    .closed-day td:last-child { color: var(--color-text-muted) !important; font-weight: 300 !important; }
+
+    /* ============================================================
+       SECCION: CTA DE CIERRE
+       ============================================================ */
+    .closing-cta {
+      padding: var(--space-xl) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
+    }
+    /* Detalle decorativo de luz */
+    .closing-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(180deg, var(--color-olive), transparent);
+      opacity: 0.4;
+    }
+
+    .closing-cta__accent {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+      display: block;
+      margin-bottom: 1.5rem;
+      padding-top: 1rem;
+    }
+    .closing-cta__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--color-cream);
+      margin-bottom: 1rem;
+    }
+    .closing-cta__title em { font-style: italic; color: var(--color-amber-light); }
+    .closing-cta__desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+    .closing-cta__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Boton llamada — borde fino crema */
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid var(--color-cream);
+      color: var(--color-cream);
+      background: transparent;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      min-height: 48px;
+    }
+    .btn-call:hover {
+      background: var(--color-cream);
+      color: var(--color-bg);
+    }
+
+    /* Boton WhatsApp — fill oliva elegante */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2.2rem;
+      background: var(--color-olive);
+      color: var(--color-cream);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      min-height: 48px;
+      border: 1px solid transparent;
+    }
+    .btn-whatsapp:hover {
+      background: var(--color-moss);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      padding: var(--space-lg) 0 var(--space-md);
+      background: #0a0907;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer__logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--color-cream);
+      letter-spacing: 0.06em;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-top: 5px;
+    }
+
+    .footer__socials {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      transition: all var(--transition);
+    }
+    .social-link:hover {
+      border-color: rgba(107,124,78,0.5);
+      color: var(--color-cream);
+      background: rgba(107,124,78,0.08);
+    }
+
+    .footer__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+    }
+    .footer__links a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      transition: color var(--transition);
+    }
+    .footer__links a:hover { color: var(--color-cream); }
+
+    .footer__bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      opacity: 0.6;
+    }
+
+    /* ============================================================
+       BOTON FLOTANTE WHATSAPP
+       ============================================================ */
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 900;
+      width: 56px;
+      height: 56px;
+      background: var(--color-olive);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(74,94,56,0.35);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .whatsapp-fab:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(74,94,56,0.55);
+    }
+    .whatsapp-fab svg { width: 28px; height: 28px; fill: var(--color-cream); }
+
+    /* Pulso sutil */
+    .whatsapp-fab::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(107,124,78,0.35);
+      animation: fabPulse 3s ease infinite;
+    }
+    @keyframes fabPulse {
+      0%   { transform: scale(1);   opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    /* Wrapper del mapa embebido */
+    .map-wrapper {
+      position: relative;
+      flex: 1.3;
+      min-height: 380px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+    }
+    .map-open-link {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: var(--color-surface);
+      color: var(--color-amber);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      transition: background var(--transition), color var(--transition);
+    }
+    .map-open-link:hover {
+      background: var(--color-amber);
+      color: var(--color-bg);
+    }
+
+    /* Footer columna de contacto */
+    .footer__contact-label {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-olive);
+      margin-bottom: 0.85rem;
+    }
+    .footer__contact-item {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.65rem;
+    }
+    .footer__contact-item a { transition: color var(--transition); }
+    .footer__contact-item a:hover { opacity: 0.8; }
+
+    /* Tooltip en WhatsApp FAB */
+    .whatsapp-fab__tooltip {
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--color-surface-2);
+      color: var(--color-cream);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .whatsapp-fab__tooltip::after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 5px solid transparent;
+      border-left-color: var(--color-surface-2);
+    }
+    .whatsapp-fab:hover .whatsapp-fab__tooltip { opacity: 1; }
+
+    /* ============================================================
+       MEDIA QUERIES — TABLET (>= 640px)
+       ============================================================ */
+    @media (min-width: 640px) {
+      .about__props         { grid-template-columns: repeat(3, 1fr); }
+      .dishes__grid         { grid-template-columns: repeat(2, 1fr); }
+      .testimonials__grid   { grid-template-columns: repeat(2, 1fr); }
+
+      /* Galeria: 3 columnas en tablet */
+      .gallery__grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+      }
+      /* Ajuste de items especiales en tablet */
+      .gallery__item--wide  { grid-column: span 2; }
+      .gallery__item--tall  { grid-row: span 2; }
+    }
+
+    /* ============================================================
+       MEDIA QUERIES — DESKTOP (>= 1024px)
+       ============================================================ */
+    @media (min-width: 1024px) {
+      .nav__links     { display: flex; }
+      .nav__cta       { display: block; }
+      .nav__hamburger { display: none; }
+
+      .about__inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 5rem;
+      }
+      .about__text   { flex: 1; }
+      .about__visual { flex: 1; min-height: 520px; }
+
+      .dishes__grid { grid-template-columns: repeat(3, 1fr); }
+
+      .testimonials__grid { grid-template-columns: repeat(3, 1fr); }
+
+      /* Galeria: 4 columnas en desktop con grid asimetrico editorial */
+      .gallery__grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 220px;
+      }
+
+      .location__inner {
+        flex-direction: row;
+        gap: 5rem;
+      }
+      .map-wrapper     { flex: 1.3; min-height: 440px; }
+      .map-wrapper iframe { min-height: 440px; }
+      .location__info  { flex: 1; }
+
+      .footer__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+      .footer__brand      { flex: 1; }
+      .footer__links-col  { flex: 1; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVEGACION
+       ============================================================ -->
+  <nav class="nav" id="nav" aria-label="Navegacion principal">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Flama — ir al inicio">
+        Flama
+      </a>
+
+      <div class="nav__links" role="list">
+        <a href="#about"    role="listitem">Nosotros</a>
+        <a href="#dishes"   role="listitem">Platillos</a>
+        <a href="#menu"     role="listitem">Menu</a>
+        <a href="#gallery"  role="listitem">Galeria</a>
+        <a href="#location" role="listitem">Ubicacion</a>
+      </div>
+
+      <a
+        href="https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F"
+        class="btn-primary nav__cta"
+        target="_blank" rel="noopener noreferrer"
+        aria-label="Reservar mesa por WhatsApp"
+      >
+        Reservar Mesa
+      </a>
+
+      <!-- Hamburguesa (movil) -->
+      <button class="nav__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menu movil overlay -->
+  <nav class="nav__mobile" id="mobileMenu" aria-label="Menu movil" role="dialog" aria-modal="true">
+    <a href="#about"        onclick="closeMobileMenu()">Nosotros</a>
+    <a href="#dishes"       onclick="closeMobileMenu()">Platillos</a>
+    <a href="#menu"         onclick="closeMobileMenu()">Menu</a>
+    <a href="#gallery"      onclick="closeMobileMenu()">Galeria</a>
+    <a href="#testimonials" onclick="closeMobileMenu()">Resenas</a>
+    <a href="#location"     onclick="closeMobileMenu()">Ubicacion</a>
+    <a
+      href="https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F"
+      target="_blank" rel="noopener noreferrer"
+      class="btn-primary" style="margin-top:1rem"
+      onclick="closeMobileMenu()"
+    >Reservar Mesa</a>
+  </nav>
+
+
+  <main>
+    <!-- ==========================================================
+         HERO
+         ========================================================== -->
+    <section class="hero" id="hero" aria-label="Bienvenida a Flama">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow">Restaurante — Chilpancingo, Guerrero</span>
+        <h1 class="hero__title">
+          Donde el fuego<br>
+          se convierte en <em>arte</em>
+        </h1>
+        <p class="hero__sub">
+          Una experiencia gastronómica pensada para quienes buscan algo más que comer.
+          Ingredientes vivos, atmósfera íntima, momentos que perduran.
+        </p>
+        <div class="hero__ctas">
+          <a href="tel:+527471234567" class="btn-primary">
+            Reservar Mesa
+          </a>
+          <a href="#menu" class="btn-secondary">
+            Ver Menu
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>Descubrir</span>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SOBRE FLAMA
+         ========================================================== -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__inner">
+
+          <div class="about__text">
+            <span class="section-label reveal">Nuestra historia</span>
+            <h2 class="section-title reveal reveal-delay-1" id="about-title">
+              El arte de cocinar<br><span>con fuego vivo</span>
+            </h2>
+            <div class="olive-line reveal reveal-delay-2"></div>
+            <p class="about__desc reveal reveal-delay-2">
+              Flama nació de una obsesión: encontrar el punto exacto donde el fuego
+              <strong>transforma un ingrediente en una experiencia que se recuerda.</strong>
+              En el corazón de Chilpancingo, creamos un espacio donde la naturaleza entra
+              a la sala: vegetación tropical desbordante, luz ámbar cálida y el aroma
+              inconfundible de la brasa viva.
+            </p>
+            <p class="about__desc reveal reveal-delay-3">
+              Cada detalle fue pensado para que te olvides del mundo exterior —
+              los sillones de piel café, la madera honey live-edge de las mesas,
+              el verde que lo abraza todo. Aquí no se viene solo a comer.
+              <strong>Se viene a vivir algo.</strong>
+            </p>
+
+            <div class="about__props">
+              <div class="prop-card reveal reveal-delay-2">
+                <div class="prop-card__icon" aria-hidden="true">
+                  <!-- Llama / fuego -->
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C6 8 4 13 6 17c1 2 3 3 6 3s5-1 6-3c2-4 0-9-6-15z"/><path d="M12 22c-2 0-4-1-4-3 0-2 2-4 4-4s4 2 4 4c0 2-2 3-4 3z"/></svg>
+                </div>
+                <div>
+                  <div class="prop-card__title">Fuego Vivo</div>
+                  <div class="prop-card__desc">Coccion en carbon y lena seleccionada. El fuego es nuestro ingrediente principal.</div>
+                </div>
+              </div>
+              <div class="prop-card reveal reveal-delay-3">
+                <div class="prop-card__icon" aria-hidden="true">
+                  <!-- Hoja / naturaleza -->
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22c0-8 5-14 11-16-1 6 1 11 5 14-3 1-6 2-9 2H2z"/><path d="M12 6c0 5-2 10-6 14"/></svg>
+                </div>
+                <div>
+                  <div class="prop-card__title">Temporada &amp; Origen</div>
+                  <div class="prop-card__desc">Ingredientes de productores locales de Guerrero. Frescos, honestos, de la tierra.</div>
+                </div>
+              </div>
+              <div class="prop-card reveal reveal-delay-4">
+                <div class="prop-card__icon" aria-hidden="true">
+                  <!-- Estrella / autor -->
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div>
+                  <div class="prop-card__title">Cocina de Autor</div>
+                  <div class="prop-card__desc">Recetas desarrolladas con tecnica contemporanea y un caracter que solo Flama tiene.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reemplaza este bloque con una <img> real cuando tengas fotos -->
+          <div class="about__visual reveal reveal-delay-3" aria-hidden="true">
+            <div class="about__visual-placeholder">
+              <span class="icon" aria-hidden="true">&#127807;</span>
+              <p>La experiencia Flama</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         PLATILLOS DESTACADOS
+         ========================================================== -->
+    <section class="dishes" id="dishes" aria-labelledby="dishes-title">
+      <div class="container">
+        <div class="dishes__header">
+          <span class="section-label reveal">Lo mejor de la casa</span>
+          <h2 class="section-title reveal reveal-delay-1" id="dishes-title">
+            Platillos <span>Estrella</span>
+          </h2>
+          <div class="olive-line center reveal reveal-delay-2"></div>
+        </div>
+
+        <div class="dishes__grid">
+
+          <!-- Platillo 1 — edita nombre, descripcion y precio -->
+          <article class="dish-card reveal">
+            <div class="dish-card__img dish-bg-1">
+              <span class="dish-card__img-label" aria-hidden="true">&#129385;</span>
+              <span class="dish-card__badge">Firma</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Ribeye al Carbon</h3>
+              <p class="dish-card__desc">Corte prime sellado en las brasas, terminado con mantequilla de hierbas y flor de sal.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">$480</span>
+                <span class="dish-card__tag">Principal</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Platillo 2 -->
+          <article class="dish-card reveal reveal-delay-1">
+            <div class="dish-card__img dish-bg-2">
+              <span class="dish-card__img-label" aria-hidden="true">&#127839;</span>
+              <span class="dish-card__badge">Popular</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Pulpo a la Plancha</h3>
+              <p class="dish-card__desc">Pulpo gallego asado, sobre pure de papa ahumada y aceite de pimenton.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">$320</span>
+                <span class="dish-card__tag">Del mar</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Platillo 3 -->
+          <article class="dish-card reveal reveal-delay-2">
+            <div class="dish-card__img dish-bg-3">
+              <span class="dish-card__img-label" aria-hidden="true">&#127843;</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Salmon en Costra</h3>
+              <p class="dish-card__desc">Filete de salmon con costra de pistache y miel de agave sobre cama de quinoa.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">$295</span>
+                <span class="dish-card__tag">Del mar</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Platillo 4 -->
+          <article class="dish-card reveal reveal-delay-1">
+            <div class="dish-card__img dish-bg-4">
+              <span class="dish-card__img-label" aria-hidden="true">&#127858;</span>
+              <span class="dish-card__badge">Nuevo</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Costilla BBQ Flama</h3>
+              <p class="dish-card__desc">Costilla de res 12 horas al horno, glaseada con nuestra salsa secreta de la casa.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">$410</span>
+                <span class="dish-card__tag">Principal</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Platillo 5 -->
+          <article class="dish-card reveal reveal-delay-2">
+            <div class="dish-card__img dish-bg-5">
+              <span class="dish-card__img-label" aria-hidden="true">&#127804;</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Carpaccio de Res</h3>
+              <p class="dish-card__desc">Laminado fino con trufa negra, parmesano viejo y aceite de oliva extra virgen.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">$210</span>
+                <span class="dish-card__tag">Entrada</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Platillo 6 -->
+          <article class="dish-card reveal reveal-delay-3">
+            <div class="dish-card__img dish-bg-6">
+              <span class="dish-card__img-label" aria-hidden="true">&#127854;</span>
+              <span class="dish-card__badge">Postre</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__name">Coulant de Chocolate</h3>
+              <p class="dish-card__desc">Volcan de chocolate oscuro 70% con centro liquido y helado de vainilla artesanal.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">$145</span>
+                <span class="dish-card__tag">Postre</span>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /dishes__grid -->
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         MENU COMPLETO (TABS)
+         ========================================================== -->
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="menu__header">
+          <span class="section-label reveal">Toda la carta</span>
+          <h2 class="section-title reveal reveal-delay-1" id="menu-title">
+            Nuestro <span>Menu</span>
+          </h2>
+          <div class="olive-line center reveal reveal-delay-2"></div>
+        </div>
+
+        <!-- Tabs de navegacion -->
+        <div class="menu__tabs" role="tablist" aria-label="Categorias del menu">
+          <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-entradas"    id="btn-entradas">Entradas</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-principales" id="btn-principales">Principales</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-postres"      id="btn-postres">Postres</button>
+          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-bebidas"      id="btn-bebidas">Bebidas</button>
+        </div>
+
+        <!-- Panel: Entradas -->
+        <div class="menu__panel active" id="tab-entradas" role="tabpanel" aria-labelledby="btn-entradas">
+          <ul class="menu__list">
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Carpaccio de Res</div>
+                <div class="menu-item__desc">Trufa negra, parmesano, aceite de oliva</div>
+              </div>
+              <span class="menu-item__price">$210</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Ceviche de Camaron</div>
+                <div class="menu-item__desc">Citricos, cilantro, aguacate, tostadas</div>
+              </div>
+              <span class="menu-item__price">$185</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Bruschetta Flama</div>
+                <div class="menu-item__desc">Pan artesanal, tomate asado, queso de cabra, reduccion de vino</div>
+              </div>
+              <span class="menu-item__price">$145</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Tabla de Embutidos</div>
+                <div class="menu-item__desc">Seleccion de quesos y carnes curadas importadas</div>
+              </div>
+              <span class="menu-item__price">$320</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Sopa de Cebolla Gratinada</div>
+                <div class="menu-item__desc">Estilo frances, gruyere fundido, costron de pan</div>
+              </div>
+              <span class="menu-item__price">$155</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Panel: Principales -->
+        <div class="menu__panel" id="tab-principales" role="tabpanel" aria-labelledby="btn-principales">
+          <ul class="menu__list">
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Ribeye al Carbon — 400g</div>
+                <div class="menu-item__desc">Mantequilla de hierbas, papa gratinada, ensalada verde</div>
+              </div>
+              <span class="menu-item__price">$480</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Costilla BBQ Flama</div>
+                <div class="menu-item__desc">Salsa secreta de la casa, coleslaw, elote asado</div>
+              </div>
+              <span class="menu-item__price">$410</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Pulpo a la Plancha</div>
+                <div class="menu-item__desc">Pure de papa ahumada, pimenton, micro hierbas</div>
+              </div>
+              <span class="menu-item__price">$320</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Salmon en Costra de Pistache</div>
+                <div class="menu-item__desc">Miel de agave, quinoa, esparragos</div>
+              </div>
+              <span class="menu-item__price">$295</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Pechuga Rellena</div>
+                <div class="menu-item__desc">Espinacas, queso manchego, salsa de champiñones</div>
+              </div>
+              <span class="menu-item__price">$255</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Pasta al Ajillo con Mariscos</div>
+                <div class="menu-item__desc">Camarones, almejas, calamar, vino blanco</div>
+              </div>
+              <span class="menu-item__price">$275</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Panel: Postres -->
+        <div class="menu__panel" id="tab-postres" role="tabpanel" aria-labelledby="btn-postres">
+          <ul class="menu__list">
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Coulant de Chocolate</div>
+                <div class="menu-item__desc">Centro liquido, helado de vainilla artesanal</div>
+              </div>
+              <span class="menu-item__price">$145</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Creme Brulee</div>
+                <div class="menu-item__desc">Vainilla de Papantla, caramelo quemado en mesa</div>
+              </div>
+              <span class="menu-item__price">$125</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Tarta de Queso Ricotta</div>
+                <div class="menu-item__desc">Frutos rojos frescos, coulis de frambuesa</div>
+              </div>
+              <span class="menu-item__price">$135</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Helados Artesanales</div>
+                <div class="menu-item__desc">3 bolas a elegir — vainilla, chocolate, pistache, fresa</div>
+              </div>
+              <span class="menu-item__price">$95</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Panel: Bebidas -->
+        <div class="menu__panel" id="tab-bebidas" role="tabpanel" aria-labelledby="btn-bebidas">
+          <ul class="menu__list">
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Coctel Flama</div>
+                <div class="menu-item__desc">Mezcal, citricos, chile ancho, sal de gusano</div>
+              </div>
+              <span class="menu-item__price">$145</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Vino Tinto Copa</div>
+                <div class="menu-item__desc">Seleccion del sommelier — Malbec o Tempranillo</div>
+              </div>
+              <span class="menu-item__price">$120</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Vino Blanco Copa</div>
+                <div class="menu-item__desc">Chardonnay o Sauvignon Blanc de temporada</div>
+              </div>
+              <span class="menu-item__price">$110</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Agua Mineral / Natural</div>
+                <div class="menu-item__desc">500ml</div>
+              </div>
+              <span class="menu-item__price">$45</span>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name">Cafe de Olla Flama</div>
+                <div class="menu-item__desc">Preparado con canela y piloncillo, grano de origen</div>
+              </div>
+              <span class="menu-item__price">$65</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         GALERIA — Grid editorial asimetrico
+         ========================================================== -->
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="gallery__header">
+          <span class="section-label reveal">Momentos Flama</span>
+          <h2 class="section-title reveal reveal-delay-1" id="gallery-title">
+            La <span>Experiencia</span> Visual
+          </h2>
+          <div class="olive-line center reveal reveal-delay-2"></div>
+        </div>
+
+        <!--
+          Reemplaza cada .gallery__placeholder con:
+          <img loading="lazy" src="FOTOS/foto.jpg" alt="Descripcion de la foto" style="width:100%;height:100%;object-fit:cover;">
+        -->
+        <div class="gallery__grid" aria-label="Galeria de fotos del restaurante">
+
+          <!-- Item 1: ancho x2 — interior del salon -->
+          <div class="gallery__item gallery__item--wide reveal"
+               data-caption="Salón principal — luz ámbar, piel y selva">
+            <div class="gallery__placeholder gb-1"
+                 role="img" aria-label="Salon principal de Flama con iluminacion ambar calida y vegetacion tropical"></div>
+          </div>
+
+          <!-- Item 2: tall x2 — vegetacion tropical interior -->
+          <div class="gallery__item gallery__item--tall reveal reveal-delay-1"
+               data-caption="Vegetación tropical que respira dentro">
+            <div class="gallery__placeholder gb-2"
+                 role="img" aria-label="Jardin interior con palmeras y vegetacion tropical del restaurante Flama"></div>
+          </div>
+
+          <!-- Item 3: normal — detalle de platillo -->
+          <div class="gallery__item reveal reveal-delay-2"
+               data-caption="Cada platillo, una obra de fuego">
+            <div class="gallery__placeholder gb-3"
+                 role="img" aria-label="Detalle de presentacion de platillo principal en Flama"></div>
+          </div>
+
+          <!-- Item 4: normal — mesa servida -->
+          <div class="gallery__item reveal reveal-delay-3"
+               data-caption="La mesa perfecta te espera">
+            <div class="gallery__placeholder gb-4"
+                 role="img" aria-label="Mesa elegantemente servida bajo iluminacion cenital en Flama"></div>
+          </div>
+
+          <!-- Item 5: normal — barra de bebidas -->
+          <div class="gallery__item reveal reveal-delay-1"
+               data-caption="Maridaje para cada momento">
+            <div class="gallery__placeholder gb-5"
+                 role="img" aria-label="Seleccion de vinos y cocteles artesanales en la barra de Flama"></div>
+          </div>
+
+          <!-- Item 6: wide x2 — vista del espacio completo -->
+          <div class="gallery__item gallery__item--wide reveal reveal-delay-2"
+               data-caption="Un espacio donde el tiempo se detiene">
+            <div class="gallery__placeholder gb-6"
+                 role="img" aria-label="Vista panoramica del salon de Flama con muebles de piel y vegetacion exuberante"></div>
+          </div>
+
+          <!-- Item 7: normal — fuego y cocina -->
+          <div class="gallery__item reveal reveal-delay-3"
+               data-caption="El fuego que da vida a todo">
+            <div class="gallery__placeholder gb-7"
+                 role="img" aria-label="Cocina de fuego vivo en Flama — el carbon como instrumento"></div>
+          </div>
+
+          <!-- Item 8: normal — ambiente nocturno -->
+          <div class="gallery__item reveal reveal-delay-4"
+               data-caption="La noche empieza en Flama">
+            <div class="gallery__placeholder gb-8"
+                 role="img" aria-label="Ambiente nocturno del restaurante Flama con luz ambar intima"></div>
+          </div>
+
+          <!-- Item 9: normal — detalle de materiales -->
+          <div class="gallery__item reveal reveal-delay-5"
+               data-caption="Madera, piel y naturaleza en cada rincón">
+            <div class="gallery__placeholder gb-9"
+                 role="img" aria-label="Detalle de los materiales naturales de Flama — madera honey live-edge y cuero cafe"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         TESTIMONIOS
+         ========================================================== -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="testimonials__header">
+          <span class="section-label reveal">Nuestros comensales</span>
+          <h2 class="section-title reveal reveal-delay-1" id="testimonials-title">
+            Lo que dicen <span>de Flama</span>
+          </h2>
+          <div class="olive-line center reveal reveal-delay-2"></div>
+        </div>
+
+        <div class="testimonials__grid">
+
+          <article class="testimonial-card reveal">
+            <div class="testimonial-card__sep"></div>
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+            </div>
+            <p class="testimonial-card__text">
+              "El Ribeye al carbon es, sin exageracion, el mejor que he probado en mi vida.
+              La coccion perfecta, los sabores increibles. Ya tenemos mesa fija los viernes."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">M</div>
+              <div>
+                <div class="testimonial-card__name">Marina R.</div>
+                <div class="testimonial-card__handle">Google Reviews</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal reveal-delay-1">
+            <div class="testimonial-card__sep"></div>
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+            </div>
+            <p class="testimonial-card__text">
+              "Celebramos nuestro aniversario aqui y fue magico. La atencion, el ambiente,
+              los platillos... todo 10 de 10. El pulpo es una experiencia en si mismo."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">C</div>
+              <div>
+                <div class="testimonial-card__name">Carlos &amp; Diana</div>
+                <div class="testimonial-card__handle">Instagram</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal reveal-delay-2">
+            <div class="testimonial-card__sep"></div>
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+              <span class="star" aria-hidden="true">&#9733;</span>
+            </div>
+            <p class="testimonial-card__text">
+              "Vine por recomendacion y volvi tres veces ese mismo mes. El coulant de
+              chocolate es pecado divino. El servicio, impecable. Flama es referente."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">L</div>
+              <div>
+                <div class="testimonial-card__name">Luisa M.</div>
+                <div class="testimonial-card__handle">TripAdvisor</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         UBICACION Y HORARIOS
+         ========================================================== -->
+    <section class="location" id="location" aria-labelledby="location-title">
+      <div class="container">
+        <div class="location__inner">
+
+          <!-- Mapa embebido de Google Maps -->
+          <!-- NOTA: Para usar el iframe real, reemplaza el div.map-wrapper por el iframe
+               que obtienes en Google Maps > Compartir > Insertar un mapa.
+               El iframe actual usa la URL de busqueda como fallback funcional. -->
+          <div class="map-wrapper reveal" aria-label="Mapa de ubicacion de Flama Restaurante">
+            <iframe
+              src="https://maps.google.com/maps?q=Av.+Lazaro+Cardenas+71+Chilpancingo+Guerrero+Mexico&output=embed&z=15"
+              width="100%"
+              height="100%"
+              style="border:0; border-radius:var(--radius-lg); min-height:380px; display:block; filter:saturate(0.7) brightness(0.85);"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicacion de Flama Restaurante en Chilpancingo, Guerrero"
+            ></iframe>
+            <a
+              href="https://maps.google.com/?q=Av+Lazaro+Cardenas+71+Chilpancingo+de+los+Bravo+Guerrero+Mexico"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="map-open-link"
+              aria-label="Abrir en Google Maps"
+            >
+              Abrir en Google Maps &#8599;
+            </a>
+          </div>
+
+          <!-- Info de contacto y horarios -->
+          <div class="location__info reveal reveal-delay-2">
+            <span class="section-label">Encontranos</span>
+            <h2 class="section-title" id="location-title">
+              Ven a <span>Flama</span>
+            </h2>
+            <div class="olive-line"></div>
+
+            <div class="location__detail">
+              <span class="location__detail-icon" aria-hidden="true">&#128205;</span>
+              <div>
+                <div class="location__detail-title">Direccion</div>
+                <!-- EDITAR: reemplaza con la direccion real -->
+                <div class="location__detail-text">
+                  Plaza Cárdenas Local E<br>
+                  Av. Lázaro Cárdenas No. 71<br>
+                  Chilpancingo de los Bravo, Gro.
+                </div>
+              </div>
+            </div>
+
+            <div class="location__detail">
+              <span class="location__detail-icon" aria-hidden="true">&#128222;</span>
+              <div>
+                <div class="location__detail-title">Reservaciones</div>
+                <!-- EDITAR: reemplaza con el telefono real -->
+                <div class="location__detail-text">
+                  <a href="tel:+527471234567" style="color:var(--color-amber)">+52 747 123 4567</a><br>
+                  <small style="color:var(--color-text-muted); font-weight:300;">Tambien por WhatsApp</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="location__detail">
+              <span class="location__detail-icon" aria-hidden="true">&#128336;</span>
+              <div>
+                <div class="location__detail-title">Horarios de atencion</div>
+                <!-- EDITAR: ajusta los dias y horarios segun tu restaurante -->
+                <table class="hours-table" aria-label="Horarios del restaurante" id="hours-table">
+                  <tbody>
+                    <tr class="closed-day" data-days="1">
+                      <td>Lunes</td>
+                      <td>Cerrado</td>
+                    </tr>
+                    <tr data-days="2,3,4">
+                      <td>Martes – Jueves</td>
+                      <td>1:00 pm – 11:00 pm</td>
+                    </tr>
+                    <tr data-days="5,6">
+                      <td>Viernes – Sábado</td>
+                      <td>1:00 pm – 1:00 am</td>
+                    </tr>
+                    <tr data-days="0">
+                      <td>Domingo</td>
+                      <td>1:00 pm – 9:00 pm</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div><!-- /location__info -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         CTA DE CIERRE
+         ========================================================== -->
+    <section class="closing-cta" aria-label="Llamado a la accion final">
+      <div class="container">
+        <span class="closing-cta__accent reveal">Tu mesa te espera</span>
+        <h2 class="closing-cta__title reveal reveal-delay-1">
+          Una experiencia que<br><em>no olvidaras</em>
+        </h2>
+        <p class="closing-cta__desc reveal reveal-delay-2">
+          Reserva hoy y descubre por que Flama es el lugar donde
+          cada cena se convierte en un recuerdo que vale la pena vivir.
+        </p>
+        <div class="closing-cta__actions reveal reveal-delay-3">
+          <a href="tel:+527471234567" class="btn-call">
+            Llamar y Reservar
+          </a>
+          <a
+            href="https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-whatsapp"
+            aria-label="Reservar mesa por WhatsApp"
+          >
+            Reservar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" aria-label="Pie de pagina">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <div class="footer__logo">Flama</div>
+          <div class="footer__tagline">Donde el fuego se convierte en arte</div>
+          <div class="footer__socials" aria-label="Redes sociales">
+            <!-- EDITAR: reemplaza los href con los links reales de tus redes -->
+            <a href="#" class="social-link" aria-label="Instagram de Flama" rel="noopener">&#128247;</a>
+            <a href="#" class="social-link" aria-label="Facebook de Flama"  rel="noopener">&#128100;</a>
+            <a href="#" class="social-link" aria-label="TikTok de Flama"    rel="noopener">&#127926;</a>
+          </div>
+        </div>
+
+        <div class="footer__links-col">
+          <nav class="footer__links" aria-label="Links del footer">
+            <a href="#about">Nosotros</a>
+            <a href="#dishes">Platillos</a>
+            <a href="#menu">Menu</a>
+            <a href="#gallery">Galeria</a>
+            <a href="#location">Contacto</a>
+          </nav>
+        </div>
+
+        <div class="footer__links-col footer__contact-col">
+          <p class="footer__contact-label">Contacto &amp; Ubicacion</p>
+          <p class="footer__contact-item">
+            <a href="tel:+527471234567" style="color:var(--color-amber)">+52 747 123 4567</a>
+          </p>
+          <p class="footer__contact-item">
+            Plaza Cárdenas Local E<br>
+            Av. Lázaro Cárdenas No. 71<br>
+            Chilpancingo de los Bravo, Gro.
+          </p>
+          <p class="footer__contact-item">
+            <a
+              href="https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color:var(--color-olive)"
+            >Escribir por WhatsApp &#8599;</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <!-- EDITAR: actualiza el año y nombre si es necesario -->
+        &copy; 2026 Flama Restaurante. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       BOTON FLOTANTE WHATSAPP
+       ============================================================ -->
+  <!-- EDITAR: reemplaza el numero de WhatsApp real -->
+  <a
+    href="https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F"
+    class="whatsapp-fab"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <span class="whatsapp-fab__tooltip" aria-hidden="true">Reservar por WhatsApp</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    /* ----------------------------------------------------------
+       1. NAVEGACION: transparente arriba, opaca al hacer scroll
+       ---------------------------------------------------------- */
+    (function initNav() {
+      var nav = document.getElementById('nav');
+      var observer = new IntersectionObserver(
+        function(entries) {
+          nav.classList.toggle('scrolled', !entries[0].isIntersecting);
+        },
+        { threshold: 0.1 }
+      );
+      var hero = document.getElementById('hero');
+      if (hero) observer.observe(hero);
+    })();
+
+
+    /* ----------------------------------------------------------
+       2. MENU MOVIL (hamburguesa)
+       ---------------------------------------------------------- */
+    var hamburger  = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+
+    function openMobileMenu() {
+      hamburger.classList.add('open');
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+
+
+    /* ----------------------------------------------------------
+       3. TABS DEL MENU
+       ---------------------------------------------------------- */
+    (function initTabs() {
+      var tabBtns   = document.querySelectorAll('.tab-btn');
+      var tabPanels = document.querySelectorAll('.menu__panel');
+
+      tabBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var targetId = btn.getAttribute('aria-controls');
+
+          tabBtns.forEach(function(b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          tabPanels.forEach(function(p) {
+            p.classList.remove('active');
+          });
+
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          var target = document.getElementById(targetId);
+          if (target) target.classList.add('active');
+        });
+      });
+    })();
+
+
+    /* ----------------------------------------------------------
+       4. ANIMACIONES EN SCROLL (IntersectionObserver)
+       ---------------------------------------------------------- */
+    (function initReveal() {
+      var elements = document.querySelectorAll('.reveal');
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(
+        function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      elements.forEach(function(el) { observer.observe(el); });
+    })();
+
+
+    /* ----------------------------------------------------------
+       5. HORARIO DINAMICO — resalta la fila del dia actual
+       ---------------------------------------------------------- */
+    (function initTodayHighlight() {
+      var today = new Date().getDay(); /* 0=dom, 1=lun, 2=mar, 3=mie, 4=jue, 5=vie, 6=sab */
+      var rows = document.querySelectorAll('#hours-table tbody tr[data-days]');
+      rows.forEach(function(row) {
+        var days = row.getAttribute('data-days').split(',').map(Number);
+        if (days.indexOf(today) !== -1) {
+          row.classList.add('today');
+        }
+      });
+    })();
+
+
+    /* ----------------------------------------------------------
+       6. PARTICULAS BOKEH EN EL HERO (canvas)
+       Puntos sutiles, lentos, evocando polvo de luz o bokeh ambiental.
+       Reemplaza las antiguas particulas de fuego.
+       ---------------------------------------------------------- */
+    (function initBokeh() {
+      var canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+
+      /* Paleta bokeh: cremas, olivas y ambar muy tenues */
+      var COLORS = [
+        'rgba(200, 185, 154, ',  /* beige crema */
+        'rgba(138, 158, 106, ',  /* sage */
+        'rgba(196, 144,  58, ',  /* ambar suave */
+        'rgba(107, 124,  78, ',  /* oliva */
+        'rgba(232, 221, 200, ',  /* crema clara */
+      ];
+
+      var particles = [];
+      var W, H;
+
+      function resize() {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+
+      /* Particula bokeh individual */
+      function Bokeh() { this.reset(); }
+
+      Bokeh.prototype.reset = function() {
+        /* Distribucion aleatoria en toda la pantalla */
+        this.x       = Math.random() * W;
+        this.y       = Math.random() * H;
+        /* Tamano variado — algunas grandes y difusas como bokeh real */
+        this.radius  = Math.random() * 2.5 + 0.5;
+        /* Movimiento muy lento: deriva suave */
+        this.vx      = (Math.random() - 0.5) * 0.18;
+        this.vy      = -(Math.random() * 0.15 + 0.04); /* leve ascenso */
+        /* Ciclo de vida largo */
+        this.life    = Math.random() * 300;
+        this.maxLife = Math.random() * 280 + 180;
+        this.color   = COLORS[Math.floor(Math.random() * COLORS.length)];
+        /* Opacidad maxima muy baja — discreta */
+        this.peakOpacity = Math.random() * 0.25 + 0.04;
+      };
+
+      Bokeh.prototype.update = function() {
+        this.x    += this.vx;
+        this.y    += this.vy;
+        this.life += 1;
+
+        /* Reborde horizontal suave */
+        if (this.x < -20)      this.x = W + 20;
+        if (this.x > W + 20)   this.x = -20;
+
+        /* Cuando llega arriba o termina su vida, renace */
+        if (this.y < -20 || this.life > this.maxLife) this.reset();
+      };
+
+      Bokeh.prototype.draw = function() {
+        /* Curva de opacidad: fade-in suave, mantenida, fade-out */
+        var progress = this.life / this.maxLife;
+        var alpha;
+        if (progress < 0.2) {
+          alpha = (progress / 0.2) * this.peakOpacity;
+        } else if (progress > 0.75) {
+          alpha = ((1 - progress) / 0.25) * this.peakOpacity;
+        } else {
+          alpha = this.peakOpacity;
+        }
+
+        /* Circulo difuso — sin borde, solo fill suave */
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + alpha.toFixed(3) + ')';
+        ctx.fill();
+      };
+
+      /* Crea 60 particulas bokeh distribuidas aleatoriamente */
+      for (var i = 0; i < 60; i++) {
+        var p = new Bokeh();
+        p.life = Math.random() * p.maxLife; /* inicia en estado aleatorio */
+        particles.push(p);
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(function(p) {
+          p.update();
+          p.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+
+      /* Respeta prefers-reduced-motion */
+      var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!mq.matches) {
+        resize();
+        window.addEventListener('resize', resize);
+        animate();
+      }
+    })();
+
+  </script>
+</body>
+</html>
