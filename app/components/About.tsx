@@ -39,7 +39,7 @@ export default function About() {
       <style>{`
         .about {
           padding: var(--space-xl) 0;
-          background: var(--color-bg-2);
+          background: transparent;
         }
         .about__inner {
           display: flex;

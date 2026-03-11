@@ -70,7 +70,7 @@ export default function Testimonials() {
       <style>{`
         .testimonials {
           padding: var(--space-xl) 0;
-          background: var(--color-bg-2);
+          background: transparent;
         }
         .testimonials__header { text-align: center; margin-bottom: 3.5rem; }
         .testimonials__grid {

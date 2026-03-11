@@ -109,7 +109,7 @@ export default function Gallery() {
       <style>{`
         .gallery {
           padding: var(--space-xl) 0;
-          background: var(--color-bg);
+          background: transparent;
         }
         .gallery__header { text-align: center; margin-bottom: 3.5rem; }
         .gallery__grid {

@@ -107,7 +107,7 @@ export default function Dishes() {
       <style>{`
         .dishes {
           padding: var(--space-xl) 0;
-          background: var(--color-bg);
+          background: transparent;
         }
         .dishes__header { text-align: center; margin-bottom: 3.5rem; }
         .dishes__grid {

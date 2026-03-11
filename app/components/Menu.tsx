@@ -267,7 +267,7 @@ export default function Menu() {
         .menu {
           position: relative;
           padding: var(--space-xl) 0;
-          background: var(--color-bg-2);
+          background: transparent;
           overflow: hidden;
         }
         .menu__header { text-align: center; margin-bottom: 3.5rem; }
