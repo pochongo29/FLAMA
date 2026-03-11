@@ -390,26 +390,54 @@
       height: 100%;
     }
 
-    /* Gradiente organico calido */
+    /* Fondo hero — selva nocturna con luz ambar */
     .hero__bg {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 50% at 20% 80%, rgba(107,124,78,0.12) 0%, transparent 65%),
-        radial-gradient(ellipse 60% 45% at 80% 30%, rgba(139,99,64,0.1) 0%, transparent 60%),
-        radial-gradient(ellipse 90% 70% at 50% 100%, rgba(26,24,18,0.8) 0%, transparent 80%),
-        linear-gradient(170deg, #0f0e0b 0%, #1a1812 45%, #0f0e0b 100%);
+        /* Bloom ambar inferior izquierdo — como vela o lampara de piso */
+        radial-gradient(ellipse 55% 40% at 12% 90%, rgba(196,128,42,0.22) 0%, transparent 58%),
+        /* Bloom ambar inferior derecho — segunda fuente de luz calida */
+        radial-gradient(ellipse 45% 35% at 88% 88%, rgba(154,107,63,0.16) 0%, transparent 55%),
+        /* Masa verde selva — corazon oscuro del follaje */
+        radial-gradient(ellipse 70% 55% at 50% 30%, rgba(42,65,28,0.55) 0%, transparent 70%),
+        /* Verde profundo lateral izquierdo — palmeras en sombra */
+        radial-gradient(ellipse 40% 70% at 0% 50%, rgba(30,50,20,0.45) 0%, transparent 65%),
+        /* Verde sutil lateral derecho */
+        radial-gradient(ellipse 35% 60% at 100% 40%, rgba(38,58,25,0.35) 0%, transparent 60%),
+        /* Viñeta de esquinas — profundidad */
+        radial-gradient(ellipse 120% 120% at 50% 50%, transparent 40%, rgba(8,11,6,0.7) 100%),
+        /* Base — negro selva muy oscuro */
+        linear-gradient(175deg, #0c1009 0%, #141a11 35%, #1a2116 65%, #0c1009 100%);
     }
 
-    /* Overlay sutil para legibilidad del texto */
+    /* Grain de pelicula — textura organica sutil */
+    .hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    /* Overlay — vignette y legibilidad del texto */
     .hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg,
-        rgba(15,14,11,0.2) 0%,
-        rgba(15,14,11,0.05) 40%,
-        rgba(15,14,11,0.55) 100%
-      );
+      background:
+        /* Sombra inferior para el texto */
+        linear-gradient(180deg,
+          transparent 0%,
+          transparent 45%,
+          rgba(10,14,8,0.5) 80%,
+          rgba(10,14,8,0.75) 100%
+        ),
+        /* Sombra superior suave */
+        linear-gradient(0deg,
+          transparent 0%,
+          rgba(10,14,8,0.25) 100%
+        );
     }
 
     .hero__content {
@@ -2544,25 +2572,15 @@
 
 
     /* ----------------------------------------------------------
-       6. PARTICULAS BOKEH EN EL HERO (canvas)
-       Puntos sutiles, lentos, evocando polvo de luz o bokeh ambiental.
-       Reemplaza las antiguas particulas de fuego.
+       6. PARTICULAS HERO — 3 capas elegantes
+       Capa 1: Bokeh grande difuso (manchas de luz ambiente)
+       Capa 2: Bokeh medio con glow suave (destellos flotantes)
+       Capa 3: Micro-chispas ascendentes (polvo de luz)
        ---------------------------------------------------------- */
-    (function initBokeh() {
+    (function initParticles() {
       var canvas = document.getElementById('hero-canvas');
       if (!canvas) return;
       var ctx = canvas.getContext('2d');
-
-      /* Paleta bokeh: cremas, olivas y ambar muy tenues */
-      var COLORS = [
-        'rgba(200, 185, 154, ',  /* beige crema */
-        'rgba(138, 158, 106, ',  /* sage */
-        'rgba(196, 144,  58, ',  /* ambar suave */
-        'rgba(107, 124,  78, ',  /* oliva */
-        'rgba(232, 221, 200, ',  /* crema clara */
-      ];
-
-      var particles = [];
       var W, H;
 
       function resize() {
@@ -2570,75 +2588,144 @@
         H = canvas.height = canvas.offsetHeight;
       }
 
-      /* Particula bokeh individual */
-      function Bokeh() { this.reset(); }
+      /* Paleta RGB extraida de la foto real del restaurante */
+      var PALETTE = [
+        [196, 128,  42],   /* ambar luz calida */
+        [237, 229, 212],   /* crema suave */
+        [122, 158,  82],   /* verde hoja con luz */
+        [154, 107,  63],   /* madera honey */
+        [200, 160,  80],   /* dorado tenue */
+        [237, 229, 212],   /* crema (mas frecuente) */
+        [196, 128,  42],   /* ambar (mas frecuente) */
+      ];
 
-      Bokeh.prototype.reset = function() {
-        /* Distribucion aleatoria en toda la pantalla */
+      function rndColor() {
+        return PALETTE[Math.floor(Math.random() * PALETTE.length)];
+      }
+
+      /* ---- CAPA 1: Bokeh grandes difusos ---- */
+      function BokehLarge() { this.reset(true); }
+      BokehLarge.prototype.reset = function(init) {
+        var c = rndColor();
+        this.r = c[0]; this.g = c[1]; this.b = c[2];
         this.x       = Math.random() * W;
-        this.y       = Math.random() * H;
-        /* Tamano variado — algunas grandes y difusas como bokeh real */
-        this.radius  = Math.random() * 2.5 + 0.5;
-        /* Movimiento muy lento: deriva suave */
-        this.vx      = (Math.random() - 0.5) * 0.18;
-        this.vy      = -(Math.random() * 0.15 + 0.04); /* leve ascenso */
-        /* Ciclo de vida largo */
-        this.life    = Math.random() * 300;
-        this.maxLife = Math.random() * 280 + 180;
-        this.color   = COLORS[Math.floor(Math.random() * COLORS.length)];
-        /* Opacidad maxima muy baja — discreta */
-        this.peakOpacity = Math.random() * 0.25 + 0.04;
+        this.y       = init ? Math.random() * H : H + 80;
+        this.radius  = Math.random() * 70 + 35;
+        this.vx      = (Math.random() - 0.5) * 0.04;
+        this.vy      = -(Math.random() * 0.05 + 0.015);
+        this.maxLife = Math.random() * 600 + 400;
+        this.life    = init ? Math.random() * this.maxLife : 0;
+        this.peakAlpha = Math.random() * 0.045 + 0.01;
       };
-
-      Bokeh.prototype.update = function() {
-        this.x    += this.vx;
-        this.y    += this.vy;
-        this.life += 1;
-
-        /* Reborde horizontal suave */
-        if (this.x < -20)      this.x = W + 20;
-        if (this.x > W + 20)   this.x = -20;
-
-        /* Cuando llega arriba o termina su vida, renace */
-        if (this.y < -20 || this.life > this.maxLife) this.reset();
+      BokehLarge.prototype.update = function() {
+        this.x += this.vx; this.y += this.vy; this.life++;
+        if (this.x < -this.radius) this.x = W + this.radius;
+        if (this.x > W + this.radius) this.x = -this.radius;
+        if (this.y < -this.radius || this.life > this.maxLife) this.reset(false);
       };
-
-      Bokeh.prototype.draw = function() {
-        /* Curva de opacidad: fade-in suave, mantenida, fade-out */
-        var progress = this.life / this.maxLife;
-        var alpha;
-        if (progress < 0.2) {
-          alpha = (progress / 0.2) * this.peakOpacity;
-        } else if (progress > 0.75) {
-          alpha = ((1 - progress) / 0.25) * this.peakOpacity;
-        } else {
-          alpha = this.peakOpacity;
-        }
-
-        /* Circulo difuso — sin borde, solo fill suave */
+      BokehLarge.prototype.draw = function() {
+        var p = this.life / this.maxLife;
+        var a = p < 0.15 ? (p / 0.15) * this.peakAlpha
+               : p > 0.75 ? ((1 - p) / 0.25) * this.peakAlpha
+               : this.peakAlpha;
+        var g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+        g.addColorStop(0, 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + (a * 2.2).toFixed(4) + ')');
+        g.addColorStop(0.5, 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + a.toFixed(4) + ')');
+        g.addColorStop(1, 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',0)');
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color + alpha.toFixed(3) + ')';
+        ctx.fillStyle = g;
         ctx.fill();
       };
 
-      /* Crea 60 particulas bokeh distribuidas aleatoriamente */
-      for (var i = 0; i < 60; i++) {
-        var p = new Bokeh();
-        p.life = Math.random() * p.maxLife; /* inicia en estado aleatorio */
-        particles.push(p);
-      }
+      /* ---- CAPA 2: Bokeh medios con glow ---- */
+      function BokehMid() { this.reset(true); }
+      BokehMid.prototype.reset = function(init) {
+        var c = rndColor();
+        this.r = c[0]; this.g = c[1]; this.b = c[2];
+        this.x       = Math.random() * W;
+        this.y       = init ? Math.random() * H : H + 20;
+        this.radius  = Math.random() * 5 + 2.5;
+        this.vx      = (Math.random() - 0.5) * 0.14;
+        this.vy      = -(Math.random() * 0.14 + 0.04);
+        this.maxLife = Math.random() * 280 + 180;
+        this.life    = init ? Math.random() * this.maxLife : 0;
+        this.peakAlpha = Math.random() * 0.18 + 0.05;
+        this.glow    = Math.random() * 10 + 5;
+      };
+      BokehMid.prototype.update = function() {
+        this.x += this.vx; this.y += this.vy; this.life++;
+        if (this.x < -20) this.x = W + 20;
+        if (this.x > W + 20) this.x = -20;
+        if (this.y < -20 || this.life > this.maxLife) this.reset(false);
+      };
+      BokehMid.prototype.draw = function() {
+        var p = this.life / this.maxLife;
+        var a = p < 0.18 ? (p / 0.18) * this.peakAlpha
+               : p > 0.72 ? ((1 - p) / 0.28) * this.peakAlpha
+               : this.peakAlpha;
+        ctx.save();
+        ctx.shadowBlur = this.glow;
+        ctx.shadowColor = 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + (a * 1.4).toFixed(4) + ')';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + a.toFixed(4) + ')';
+        ctx.fill();
+        ctx.restore();
+      };
+
+      /* ---- CAPA 3: Micro-chispas ascendentes ---- */
+      function Spark() { this.reset(true); }
+      Spark.prototype.reset = function(init) {
+        var c = rndColor();
+        this.r = c[0]; this.g = c[1]; this.b = c[2];
+        this.x       = Math.random() * W;
+        this.y       = init ? Math.random() * H : H * (0.4 + Math.random() * 0.6);
+        this.radius  = Math.random() * 1.3 + 0.3;
+        this.vx      = (Math.random() - 0.5) * 0.22;
+        this.vy      = -(Math.random() * 0.45 + 0.15);
+        this.maxLife = Math.random() * 130 + 70;
+        this.life    = init ? Math.random() * this.maxLife : 0;
+        this.peakAlpha = Math.random() * 0.55 + 0.2;
+      };
+      Spark.prototype.update = function() {
+        this.vx += (Math.random() - 0.5) * 0.008; /* deriva leve */
+        this.x += this.vx; this.y += this.vy; this.life++;
+        if (this.x < 0) this.x = W;
+        if (this.x > W) this.x = 0;
+        if (this.y < -10 || this.life > this.maxLife) this.reset(false);
+      };
+      Spark.prototype.draw = function() {
+        var p = this.life / this.maxLife;
+        var a = p < 0.12 ? (p / 0.12) * this.peakAlpha
+               : p > 0.6  ? ((1 - p) / 0.4) * this.peakAlpha
+               : this.peakAlpha;
+        ctx.save();
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + a.toFixed(4) + ')';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + this.r + ',' + this.g + ',' + this.b + ',' + a.toFixed(4) + ')';
+        ctx.fill();
+        ctx.restore();
+      };
+
+      /* Instanciar las 3 capas */
+      var particles = [];
+      for (var i = 0; i < 7;  i++) particles.push(new BokehLarge());
+      for (var i = 0; i < 38; i++) particles.push(new BokehMid());
+      for (var i = 0; i < 45; i++) particles.push(new Spark());
 
       function animate() {
         ctx.clearRect(0, 0, W, H);
-        particles.forEach(function(p) {
-          p.update();
-          p.draw();
-        });
+        /* Orden: grande -> medio -> chispas (profundidad visual) */
+        for (var i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+        }
         requestAnimationFrame(animate);
       }
 
-      /* Respeta prefers-reduced-motion */
       var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
       if (!mq.matches) {
         resize();
