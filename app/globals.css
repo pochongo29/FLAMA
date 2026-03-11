@@ -238,55 +238,64 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ============================================================
-   FONDO BOTANICO TROPICAL
-   Siluetas de palma como textura ambiental fija de baja opacidad.
-   No toques z-index ni pointer-events — deben quedar debajo
-   del canvas #ember-bg (z-index -1) y del contenido (z-index 1+).
-   Para cambiar intensidad: ajusta opacity en 0.04-0.08.
-   Para cambiar posicion: edita top/right/bottom/left/transform.
+   FONDO ATMOSFERICO PREMIUM — Flama
+   Técnica: luz, profundidad y grano. Sin formas literales.
+   Inspiración: luz filtrada a través de dosel tropical — no las
+   hojas, sino el EFECTO de la luz entre ellas. Editorial, denso,
+   cinematográfico.
+
+   Capas (de atrás hacia adelante):
+   1. body background-image  — gradientes radiales orgánicos (profundidad)
+   2. body::before            — grano fotográfico (textura de lujo)
+   3. body::after             — viñeta perimetral (encuadre editorial)
    ============================================================ */
 
-/*
-  ::before — Palma royal de coco, esquina superior derecha.
-  Vista de perfil: tronco curvo ascendente con corona de frondas
-  arqueadas divergentes. Simula la vegetacion del interior de Flama.
-*/
+/* ── 1. Base: profundidad atmosférica con luz orgánica ─────── */
+body {
+  background-color: #0D1209;
+  background-image:
+    /* Claridad cálida inferior — calor de la cocina de fuego */
+    radial-gradient(ellipse 85% 50% at 50% 105%,  rgba(110, 58, 8,  0.22) 0%, transparent 65%),
+    /* Niebla verde profunda — esquina superior izquierda, dosel lejano */
+    radial-gradient(ellipse 65% 60% at -8%  10%,  rgba(28, 52, 16, 0.55) 0%, transparent 68%),
+    /* Cálido asimétrico — esquina superior derecha */
+    radial-gradient(ellipse 45% 38% at 108%  5%,  rgba(88, 44, 6,  0.14) 0%, transparent 62%),
+    /* Sombra verde densa — esquina inferior izquierda */
+    radial-gradient(ellipse 55% 45% at -6%  98%,  rgba(20, 40, 12, 0.50) 0%, transparent 65%),
+    /* Profundidad interior — centro-derecha, crea asimetría orgánica */
+    radial-gradient(ellipse 38% 55% at 92%  55%,  rgba(16, 32, 10, 0.38) 0%, transparent 62%),
+    /* Resplandor muy sutil centro — evita el negro plano */
+    radial-gradient(ellipse 55% 35% at 48%  42%,  rgba(32, 52, 20, 0.12) 0%, transparent 70%);
+}
+
+/* ── 2. Grano fotográfico — textura de película, lujo analógico ── */
 body::before {
   content: '';
   position: fixed;
-  top: -6%;
-  right: -8%;
-  width: 680px;
-  height: 680px;
-  pointer-events: none;
+  inset: 0;
   z-index: 0;
-  opacity: 0.06;
-  filter: blur(1.5px);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cg fill='%234A6B2E'%3E%3C!-- Tronco principal curvo --%3E%3Cpath d='M390 780 C385 680 375 580 368 480 C362 380 358 280 365 200 C368 160 372 130 378 110 C382 98 386 90 390 85 C394 90 398 98 402 110 C408 130 412 160 415 200 C422 280 418 380 412 480 C405 580 395 680 390 780 Z'/%3E%3C!-- Fronda 1 — derecha alta, larga y arqueada --%3E%3Cpath d='M398 120 C420 108 455 95 495 80 C540 63 590 48 640 38 C690 28 730 24 760 24 C770 24 775 26 772 32 C768 40 755 46 738 52 C708 62 668 72 628 86 C580 102 530 122 488 142 C452 160 422 178 402 195 C392 204 386 212 384 218 C382 212 382 202 386 188 C390 170 394 148 398 120 Z'/%3E%3C!-- Fronda 2 — derecha media-alta --%3E%3Cpath d='M410 148 C435 142 470 136 510 128 C555 120 602 114 646 112 C682 110 710 114 730 120 C742 126 748 132 744 138 C738 146 722 150 700 154 C672 158 634 162 594 170 C548 180 502 194 462 210 C430 224 404 240 390 254 C384 260 380 266 380 270 C376 262 376 250 382 234 C388 214 398 184 410 148 Z'/%3E%3C!-- Fronda 3 — superior izquierda --%3E%3Cpath d='M382 112 C368 100 348 86 322 72 C292 56 256 42 218 32 C180 22 148 18 122 20 C106 22 96 26 94 34 C92 42 100 50 116 58 C138 68 170 78 204 90 C244 104 286 120 322 138 C352 154 376 170 390 184 C398 192 402 200 402 206 C406 198 406 186 402 170 C398 152 392 134 382 112 Z'/%3E%3C!-- Fronda 4 — izquierda media --%3E%3Cpath d='M374 152 C356 148 330 144 300 142 C264 140 224 142 188 150 C154 158 126 170 108 184 C96 194 90 204 94 212 C98 220 112 224 132 226 C158 228 192 226 228 224 C270 220 314 216 354 214 C382 212 402 212 414 216 C408 206 398 194 384 180 C380 172 376 162 374 152 Z'/%3E%3C!-- Fronda 5 — superior central derecha --%3E%3Cpath d='M402 90 C418 72 440 52 468 36 C498 18 532 6 562 2 C584 -2 600 2 606 10 C612 18 608 28 596 38 C578 50 552 62 524 76 C492 92 460 110 434 128 C414 142 400 156 394 168 C390 176 390 182 392 186 C390 178 388 166 388 150 C388 128 394 108 402 90 Z'/%3E%3C!-- Fronda 6 — colgante derecha baja --%3E%3Cpath d='M406 200 C424 208 448 220 474 236 C504 254 534 276 558 300 C578 320 592 340 596 356 C600 368 596 376 586 378 C574 380 556 372 536 358 C510 340 482 316 456 292 C426 264 400 236 384 214 C376 204 372 196 374 192 C376 188 380 188 386 192 C392 196 398 198 406 200 Z'/%3E%3C!-- Fronda 7 — izquierda baja colgante --%3E%3Cpath d='M378 208 C360 218 336 232 310 250 C280 270 250 294 226 320 C206 342 192 364 188 382 C186 394 190 402 200 404 C212 406 228 398 248 384 C272 366 298 342 326 316 C356 288 384 260 404 234 C416 218 420 206 416 198 C412 192 406 190 400 192 C394 196 386 202 378 208 Z'/%3E%3C!-- Palmas de fondo — frondas secundarias mas delgadas --%3E%3Cpath d='M394 105 C408 88 428 68 452 50 C476 32 502 18 522 12 C536 8 544 10 546 16 C548 24 540 34 526 46 C508 60 484 76 460 94 C440 110 422 126 410 140 C402 150 398 160 398 168 C396 158 396 144 396 126 C396 116 394 110 394 105 Z' opacity='0.7'/%3E%3Cpath d='M386 118 C372 104 352 88 328 74 C302 58 274 46 250 40 C232 36 220 38 218 46 C216 54 226 64 244 74 C266 86 294 98 322 112 C350 126 374 142 390 156 C400 166 404 174 402 180 C404 170 404 156 400 138 C396 124 390 120 386 118 Z' opacity='0.7'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top right;
+  pointer-events: none;
+  /* Ruido SVG feTurbulence: da textura orgánica sin patrón visible */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  opacity: 0.032;
+  mix-blend-mode: overlay;
 }
 
-/*
-  ::after — Monstera / frondas en abanico, esquina inferior izquierda.
-  Palma de abanico con hojas segmentadas que irradian desde el centro.
-  Rotada para anclarse en la esquina opuesta y equilibrar la composicion.
-*/
+/* ── 3. Viñeta perimetral — encuadre editorial, foco al centro ── */
 body::after {
   content: '';
   position: fixed;
-  bottom: -8%;
-  left: -10%;
-  width: 620px;
-  height: 620px;
-  pointer-events: none;
+  inset: 0;
   z-index: 0;
-  opacity: 0.05;
-  filter: blur(1.5px);
-  transform: rotate(15deg);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cg fill='%234A6B2E'%3E%3C!-- Peciolo central --%3E%3Cpath d='M400 760 C398 700 394 630 390 560 C386 490 382 420 380 360 C378 310 378 270 382 240 C386 218 390 206 396 200 C402 206 406 218 410 240 C414 270 414 310 412 360 C410 420 406 490 402 560 C398 630 402 700 400 760 Z'/%3E%3C!-- Segmento 1 — vertical superior --%3E%3Cpath d='M396 210 C394 180 390 148 388 112 C386 80 386 52 390 30 C392 16 396 8 400 6 C404 8 408 16 410 30 C414 52 414 80 412 112 C410 148 406 180 404 210 C402 224 400 232 400 238 C400 232 398 224 396 210 Z'/%3E%3C!-- Segmento 2 — 30deg derecha --%3E%3Cpath d='M406 222 C420 196 438 166 460 136 C480 108 502 82 522 62 C536 48 548 40 554 42 C560 46 558 58 548 74 C534 94 514 118 494 146 C470 178 448 210 430 238 C418 258 410 274 406 284 C404 274 404 258 406 238 C406 230 406 226 406 222 Z'/%3E%3C!-- Segmento 3 — 60deg derecha --%3E%3Cpath d='M414 238 C436 218 464 196 494 174 C526 150 558 128 586 112 C606 100 620 94 626 98 C632 104 626 116 610 130 C590 148 562 168 532 190 C498 216 466 242 440 266 C422 282 410 296 406 306 C402 296 400 280 404 262 C408 250 410 244 414 238 Z'/%3E%3C!-- Segmento 4 — 90deg derecha horizontal --%3E%3Cpath d='M418 258 C448 248 482 238 518 230 C556 220 592 214 622 214 C644 214 658 218 660 226 C662 236 648 246 626 254 C598 264 562 272 524 280 C484 288 446 296 416 306 C396 312 382 318 376 322 C376 314 380 302 390 288 C400 272 408 264 418 258 Z'/%3E%3C!-- Segmento 5 — 30deg izquierda --%3E%3Cpath d='M394 222 C380 196 362 166 340 136 C320 108 298 82 278 62 C264 48 252 40 246 42 C240 46 242 58 252 74 C266 94 286 118 306 146 C330 178 352 210 370 238 C382 258 390 274 394 284 C396 274 396 258 394 238 C394 230 394 226 394 222 Z'/%3E%3C!-- Segmento 6 — 60deg izquierda --%3E%3Cpath d='M386 238 C364 218 336 196 306 174 C274 150 242 128 214 112 C194 100 180 94 174 98 C168 104 174 116 190 130 C210 148 238 168 268 190 C302 216 334 242 360 266 C378 282 390 296 394 306 C398 296 400 280 396 262 C392 250 390 244 386 238 Z'/%3E%3C!-- Segmento 7 — 90deg izquierda horizontal --%3E%3Cpath d='M382 258 C352 248 318 238 282 230 C244 220 208 214 178 214 C156 214 142 218 140 226 C138 236 152 246 174 254 C202 264 238 272 276 280 C316 288 354 296 384 306 C404 312 418 318 424 322 C424 314 420 302 410 288 C400 272 392 264 382 258 Z'/%3E%3C!-- Nervadura central de cada segmento — lineas delgadas de detalle --%3E%3Cpath d='M399 208 C399 174 397 138 397 106 C397 82 399 62 401 48' stroke='%234A6B2E' stroke-width='2.5' fill='none' opacity='0.5'/%3E%3Cpath d='M405 224 C418 198 434 170 454 142 C468 120 484 100 496 82' stroke='%234A6B2E' stroke-width='2' fill='none' opacity='0.5'/%3E%3Cpath d='M413 240 C434 220 460 198 488 178 C510 162 532 148 550 136' stroke='%234A6B2E' stroke-width='2' fill='none' opacity='0.5'/%3E%3Cpath d='M416 260 C444 250 476 242 510 234 C538 228 564 224 584 222' stroke='%234A6B2E' stroke-width='2' fill='none' opacity='0.5'/%3E%3Cpath d='M395 224 C382 198 366 170 346 142 C332 120 316 100 304 82' stroke='%234A6B2E' stroke-width='2' fill='none' opacity='0.5'/%3E%3Cpath d='M387 240 C366 220 340 198 312 178 C290 162 268 148 250 136' stroke='%234A6B2E' stroke-width='2' fill='none' opacity='0.5'/%3E%3Cpath d='M384 260 C356 250 324 242 290 234 C262 228 236 224 216 222' stroke='%234A6B2E' stroke-width='2' fill='none' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom left;
+  pointer-events: none;
+  background:
+    /* Oscuridad superior — cierra el encuadre arriba */
+    linear-gradient(180deg, rgba(6, 10, 4, 0.52) 0%, transparent 28%),
+    /* Oscuridad inferior sutil */
+    linear-gradient(0deg,   rgba(6, 10, 4, 0.38) 0%, transparent 22%),
+    /* Oscuridad lateral izquierda */
+    linear-gradient(90deg,  rgba(6, 10, 4, 0.30) 0%, transparent 20%),
+    /* Oscuridad lateral derecha */
+    linear-gradient(270deg, rgba(6, 10, 4, 0.30) 0%, transparent 20%);
 }
