@@ -59,6 +59,10 @@ export const metadata: Metadata = {
       'Cocina de fuego vivo, atmosfera de selva tropical y muebles de piel. Plaza Cardenas, Chilpancingo, Guerrero.',
     images: ['https://flamarestaurante.mx/og-image.jpg'],
   },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 /* ============================================================
