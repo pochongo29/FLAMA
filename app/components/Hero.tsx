@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 const WA_URL =
   'https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F'
@@ -49,7 +49,7 @@ function drawLuxuryFlame(
   w: number,      // ancho de referencia
   h: number,      // alto de referencia
   t: number,
-  alpha: number   // masterAlpha (idle = 0.6)
+  alpha: number   // masterAlpha (idle = 1.0)
 ) {
   /* Respiración: pulsación muy sutil de la intensidad */
   const breath = 0.88 + 0.12 * Math.sin(t * 1.1)
@@ -66,8 +66,8 @@ function drawLuxuryFlame(
   {
     const rx = w * 1.1, ry = h * 0.14
     const g = ctx.createRadialGradient(cx, baseY, 0, cx, baseY, rx)
-    g.addColorStop(0,   `rgba(200, 100, 15, ${0.10 * A})`)
-    g.addColorStop(0.5, `rgba(160,  70, 10, ${0.05 * A})`)
+    g.addColorStop(0,   `rgba(200, 100, 15, ${0.20 * A})`)
+    g.addColorStop(0.5, `rgba(160,  70, 10, ${0.10 * A})`)
     g.addColorStop(1,   'rgba(0,0,0,0)')
     ctx.save()
     ctx.scale(1, ry / rx)
@@ -81,18 +81,19 @@ function drawLuxuryFlame(
   /* ── Capas principales: 9 "volúmenes" de luz apilados ──
      Cada uno es una elipse radial. Suben desde la base a la punta.
      El ancho disminuye y el desplazamiento aumenta hacia arriba.
+     CAMBIO: alphas casi doblados respecto a la versión anterior.
   ── */
   const volumes = [
     //  yFrac   rxFac  ryFac   r    g    b    maxA    swayFac
-    [0.00,  0.62, 0.20, 210,  95,  15,  0.13,  0.10 ],
-    [0.10,  0.50, 0.18, 220, 110,  18,  0.16,  0.12 ],
-    [0.22,  0.42, 0.16, 230, 130,  22,  0.18,  0.16 ],
-    [0.34,  0.34, 0.14, 240, 150,  28,  0.18,  0.22 ],
-    [0.46,  0.26, 0.13, 248, 170,  35,  0.16,  0.28 ],
-    [0.57,  0.20, 0.12, 252, 190,  50,  0.14,  0.34 ],
-    [0.67,  0.14, 0.11, 254, 210,  75,  0.11,  0.40 ],
-    [0.77,  0.09, 0.10, 255, 228, 110,  0.08,  0.45 ],
-    [0.87,  0.055,0.09, 255, 242, 160,  0.05,  0.48 ],
+    [0.00,  0.62, 0.20, 210,  95,  15,  0.28,  0.10 ],
+    [0.10,  0.50, 0.18, 220, 110,  18,  0.32,  0.12 ],
+    [0.22,  0.42, 0.16, 230, 130,  22,  0.36,  0.16 ],
+    [0.34,  0.34, 0.14, 240, 150,  28,  0.36,  0.22 ],
+    [0.46,  0.26, 0.13, 248, 170,  35,  0.32,  0.28 ],
+    [0.57,  0.20, 0.12, 252, 190,  50,  0.28,  0.34 ],
+    [0.67,  0.14, 0.11, 254, 210,  75,  0.22,  0.40 ],
+    [0.77,  0.09, 0.10, 255, 228, 110,  0.16,  0.45 ],
+    [0.87,  0.055,0.09, 255, 242, 160,  0.10,  0.48 ],
   ]
 
   for (let i = 0; i < volumes.length; i++) {
@@ -121,14 +122,16 @@ function drawLuxuryFlame(
     ctx.restore()
   }
 
-  /* ── Núcleo luminoso: destello central muy sutil ── */
+  /* ── Núcleo luminoso: destello central brillante ──
+     CAMBIO: alpha de 0.22 → 0.50 para hacerlo claramente visible
+  ── */
   {
     const coreY = baseY - h * 0.28
     const coreSway = swayMain * 0.5
     const coreR = w * 0.12
     const cg = ctx.createRadialGradient(cx + coreSway, coreY, 0, cx + coreSway, coreY, coreR)
-    cg.addColorStop(0,    `rgba(255, 245, 200, ${0.22 * A})`)
-    cg.addColorStop(0.5,  `rgba(255, 220, 130, ${0.10 * A})`)
+    cg.addColorStop(0,    `rgba(255, 245, 200, ${0.50 * A})`)
+    cg.addColorStop(0.5,  `rgba(255, 220, 130, ${0.22 * A})`)
     cg.addColorStop(1,    'rgba(255,180,60,0)')
     ctx.beginPath()
     ctx.arc(cx + coreSway, coreY, coreR, 0, Math.PI * 2)
@@ -142,7 +145,9 @@ function drawLuxuryFlame(
 export default function Hero() {
   const flameRef = useRef<HTMLCanvasElement>(null)
 
-  const [phase, setPhase] = useState<'intro' | 'settling' | 'idle'>('intro')
+  /* phaseRef solo se usa internamente en el loop — ya no necesitamos
+     setState para mostrar contenido. El contenido aparece con CSS
+     animation independiente del canvas. */
   const phaseRef   = useRef<'intro' | 'settling' | 'idle'>('intro')
   const phaseStart = useRef<number>(0)
 
@@ -158,10 +163,12 @@ export default function Hero() {
     const INTRO_DUR  = 1800
     const SETTLE_DUR = 900
 
+    /* CAMBIO: fallback a window.innerWidth/Height si offsetWidth es 0
+       (ocurre cuando el canvas aún no tiene layout calculado) */
     function resize() {
       if (!canvas) return
-      canvas.width  = canvas.offsetWidth
-      canvas.height = canvas.offsetHeight
+      canvas.width  = canvas.offsetWidth  || window.innerWidth
+      canvas.height = canvas.offsetHeight || window.innerHeight
     }
     resize()
     window.addEventListener('resize', resize)
@@ -177,24 +184,27 @@ export default function Hero() {
       if (phaseRef.current === 'intro') {
         const p  = Math.min(elapsed / INTRO_DUR, 1)
         const e  = 1 - Math.pow(1 - p, 3)
+        /* La llama crece desde 0 durante el intro — el texto ya es visible */
         drawLuxuryFlame(ctx!, cx, baseY, W * 0.18 * e, H * 0.52 * e, t, e)
         if (elapsed >= INTRO_DUR) {
-          phaseRef.current = 'settling'; phaseStart.current = now; setPhase('settling')
+          phaseRef.current = 'settling'; phaseStart.current = now
         }
 
       } else if (phaseRef.current === 'settling') {
         const p  = Math.min((now - phaseStart.current) / SETTLE_DUR, 1)
         const e  = 1 - Math.pow(1 - p, 3)
+        /* CAMBIO: settling va de alpha 1 → 1 (ya no bajamos a 0.6) */
         drawLuxuryFlame(ctx!, cx,
           lerpN(baseY,   H * 0.56, e),
           lerpN(W * 0.18, W * 0.13, e),
           lerpN(H * 0.52, H * 0.34, e),
-          t, lerpN(1, 0.6, e)
+          t, lerpN(1, 1, e)
         )
-        if (p >= 1) { phaseRef.current = 'idle'; phaseStart.current = now; setPhase('idle') }
+        if (p >= 1) { phaseRef.current = 'idle'; phaseStart.current = now }
 
       } else {
-        drawLuxuryFlame(ctx!, cx, H * 0.56, W * 0.13, H * 0.34, t, 0.6)
+        /* CAMBIO: idle usa alpha 1.0 en lugar de 0.6 — llama siempre intensa */
+        drawLuxuryFlame(ctx!, cx, H * 0.56, W * 0.13, H * 0.34, t, 1.0)
       }
 
       animId = requestAnimationFrame(loop)
@@ -202,9 +212,6 @@ export default function Hero() {
     animId = requestAnimationFrame(loop)
     return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize) }
   }, [])
-
-
-  const showContent = phase === 'idle'
 
   return (
     <>
@@ -228,7 +235,7 @@ export default function Hero() {
         #flame-canvas {
           position: absolute; inset: 0; width: 100%; height: 100%;
           z-index: 2; pointer-events: none;
-          filter: blur(28px);                /* toda la llama queda ultra-suave */
+          filter: blur(28px);
           will-change: filter;
         }
 
@@ -240,15 +247,14 @@ export default function Hero() {
           margin-bottom: 0.25rem;
         }
 
-        /* Logo encima de la flama — z-index 4 */
+        /* ── CAMBIO: logo aparece con su propia animación CSS,
+           independiente del estado del canvas ── */
         .hero__logo {
           position: absolute; inset: 0;
           display: flex; align-items: center; justify-content: center;
           z-index: 4;
-          opacity: 0;
-          transition: opacity 1.2s ease 0.4s;
+          animation: fadeUp 0.8s ease forwards;
         }
-        .hero__logo--visible { opacity: 1; }
         .hero__logo-text {
           font-family: 'Cormorant Garamond', serif;
           font-weight: 300;
@@ -263,15 +269,13 @@ export default function Hero() {
           user-select: none;
         }
 
-        /* Contenido principal */
+        /* Contenido principal — aparece con fadeUp propio, sin esperar al canvas */
         .hero__content {
           position: relative; z-index: 3;
           padding: 0 1.5rem var(--space-md);
           max-width: 680px;
-          opacity: 0; transform: translateY(20px);
-          transition: opacity 0.95s ease, transform 0.95s ease;
+          animation: fadeUp 0.8s ease 0.15s both;
         }
-        .hero__content--visible { opacity: 1; transform: translateY(0); }
 
         .hero__eyebrow {
           font-family: var(--font-body);
@@ -297,13 +301,12 @@ export default function Hero() {
           justify-content: center; align-items: center;
         }
 
-        /* Scroll indicator */
+        /* Scroll indicator — aparece con fadeUp, ligero delay */
         .hero__scroll {
           position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
           z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
-          opacity: 0; transition: opacity 1s ease 0.5s;
+          animation: fadeUp 0.8s ease 0.3s both;
         }
-        .hero__scroll--visible { opacity: 1; }
         .hero__scroll span {
           font-family: var(--font-body); font-size: .62rem;
           letter-spacing: .2em; text-transform: uppercase;
@@ -313,6 +316,12 @@ export default function Hero() {
           width: 1px; height: 44px;
           background: linear-gradient(180deg, var(--color-olive), transparent);
           animation: scrollPulse 2.4s ease infinite;
+        }
+
+        /* ── Keyframes compartidos ── */
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
         }
         @keyframes scrollPulse {
           0%,100%{opacity:.3;transform:scaleY(1)} 50%{opacity:.8;transform:scaleY(1.2)}
@@ -325,15 +334,15 @@ export default function Hero() {
         {/* Flama luxury — z-index 2, blur 28px via CSS */}
         <canvas ref={flameRef} id="flame-canvas" aria-hidden="true" />
 
-        {/* Logo encima — z-index 4 */}
+        {/* Logo encima — aparece con CSS animation, no espera al canvas */}
         <div className="hero__flame-logo">
-          <div className={`hero__logo${showContent ? ' hero__logo--visible' : ''}`}>
+          <div className="hero__logo">
             <span className="hero__logo-text">FLAMA</span>
           </div>
         </div>
 
-        {/* Contenido */}
-        <div className={`hero__content${showContent ? ' hero__content--visible' : ''}`}>
+        {/* Contenido — CSS animation propia, visible desde el primer render */}
+        <div className="hero__content">
           <span className="hero__eyebrow">Restaurante — Chilpancingo, Guerrero</span>
           <h1 className="hero__title">
             Donde el fuego<br />
@@ -353,7 +362,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={`hero__scroll${showContent ? ' hero__scroll--visible' : ''}`} aria-hidden="true">
+        <div className="hero__scroll" aria-hidden="true">
           <div className="hero__scroll-line" />
           <span>Descubrir</span>
         </div>
