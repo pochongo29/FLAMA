@@ -254,18 +254,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 body {
   background-color: #0D1209;
   background-image:
-    /* Claridad cálida inferior — calor de la cocina de fuego */
-    radial-gradient(ellipse 85% 50% at 50% 105%,  rgba(110, 58, 8,  0.22) 0%, transparent 65%),
-    /* Niebla verde profunda — esquina superior izquierda, dosel lejano */
-    radial-gradient(ellipse 65% 60% at -8%  10%,  rgba(28, 52, 16, 0.55) 0%, transparent 68%),
-    /* Cálido asimétrico — esquina superior derecha */
-    radial-gradient(ellipse 45% 38% at 108%  5%,  rgba(88, 44, 6,  0.14) 0%, transparent 62%),
+    /* Calor ámbar inferior — cocina de fuego */
+    radial-gradient(ellipse 90% 55% at 50% 108%,  rgba(130, 64, 8,  0.55) 0%, transparent 65%),
+    /* Dosel verde — esquina superior izquierda */
+    radial-gradient(ellipse 70% 65% at -10% 8%,   rgba(30, 58, 16, 0.80) 0%, transparent 68%),
+    /* Cálido esquina superior derecha */
+    radial-gradient(ellipse 50% 42% at 110% 4%,   rgba(95, 48, 6,  0.35) 0%, transparent 62%),
     /* Sombra verde densa — esquina inferior izquierda */
-    radial-gradient(ellipse 55% 45% at -6%  98%,  rgba(20, 40, 12, 0.50) 0%, transparent 65%),
-    /* Profundidad interior — centro-derecha, crea asimetría orgánica */
-    radial-gradient(ellipse 38% 55% at 92%  55%,  rgba(16, 32, 10, 0.38) 0%, transparent 62%),
-    /* Resplandor muy sutil centro — evita el negro plano */
-    radial-gradient(ellipse 55% 35% at 48%  42%,  rgba(32, 52, 20, 0.12) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 50% at -8%  100%, rgba(18, 38, 10, 0.75) 0%, transparent 65%),
+    /* Profundidad lateral derecha */
+    radial-gradient(ellipse 42% 60% at 105% 58%,  rgba(14, 28, 8,  0.55) 0%, transparent 62%),
+    /* Resplandor central muy sutil — rompe el plano */
+    radial-gradient(ellipse 60% 40% at 48%  40%,  rgba(35, 58, 20, 0.22) 0%, transparent 72%);
 }
 
 /* ── 2. Grano fotográfico — textura de película, lujo analógico ── */

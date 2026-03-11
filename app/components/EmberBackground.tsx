@@ -311,7 +311,8 @@ export default function EmberBackground() {
 
     /* ── Loop principal ─────────────────────────────────────── */
     function animate() {
-      drawHeat()
+      /* Canvas transparente — el fondo lo maneja CSS (gradientes en body) */
+      ctx!.clearRect(0, 0, lW, lH)
 
       /* Capa 1 — GlowOrbs (muy difusos, fondo) */
       for (let i = 0; i < 14; i++) {
