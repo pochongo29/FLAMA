@@ -124,11 +124,11 @@ export default function About() {
           background: linear-gradient(180deg, transparent, rgba(138,158,106,0.3), transparent);
         }
         .about__logo {
-          width: 220px;
-          height: 220px;
+          width: 352px;
+          height: 352px;
           object-fit: contain;
           opacity: 0.88;
-          filter: drop-shadow(0 0 40px rgba(196,144,58,0.25));
+          filter: drop-shadow(0 0 60px rgba(196,144,58,0.35));
         }
         @media (min-width: 640px) {
           .about__props { grid-template-columns: repeat(3, 1fr); }
