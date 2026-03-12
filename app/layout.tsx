@@ -75,7 +75,7 @@ const schemaOrg = {
   description:
     'Restaurante premium con cocina de fuego vivo, vegetacion tropical y muebles de piel. Experiencia gastronómica de autor en Chilpancingo, Guerrero.',
   url: 'https://flamarestaurante.mx/',
-  telephone: '+527471234567',
+  telephone: '+527541086431',
   priceRange: '$$$$',
   servesCuisine: ['Mexicana contemporanea', 'Cocina de autor', 'Parrilla'],
   address: {

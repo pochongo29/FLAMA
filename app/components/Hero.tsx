@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 
 const WA_URL =
-  'https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F'
+  'https://wa.me/527541086431?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F'
 
 /* ─── Ruido Perlin ─────────────────────────────────────────── */
 const perm = new Uint8Array(512)

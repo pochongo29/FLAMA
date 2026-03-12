@@ -12,7 +12,7 @@ import { useEffect, useRef } from 'react'
    ============================================================ */
 
 const WA_URL =
-  'https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F'
+  'https://wa.me/527541086431?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F'
 
 /* Filas de la tabla de horarios
    data-days: array de días (0=dom, 1=lun, ... 6=sab) */
@@ -67,7 +67,7 @@ export default function Location() {
       <style>{`
         .location {
           padding: var(--space-xl) 0;
-          background: var(--color-bg);
+          background: transparent;
         }
         .location__inner {
           display: flex;
@@ -227,10 +227,10 @@ export default function Location() {
                   <div className="location__detail-title">Reservaciones</div>
                   <div className="location__detail-text">
                     <a
-                      href="tel:+527471234567"
+                      href="tel:+527541086431"
                       style={{ color: 'var(--color-amber)' }}
                     >
-                      +52 747 123 4567
+                      +52 754 108 6431
                     </a>
                     <br />
                     <small style={{ color: 'var(--color-text-muted)', fontWeight: 300 }}>

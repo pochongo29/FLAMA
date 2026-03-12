@@ -9,7 +9,7 @@ import { useEffect, useRef } from 'react'
    ============================================================ */
 
 const WA_URL =
-  'https://wa.me/527471234567?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F'
+  'https://wa.me/527541086431?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20mesa%20en%20Flama%20Restaurante.%20%C2%BFTienen%20disponibilidad%3F'
 
 export default function ClosingCta() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -104,7 +104,7 @@ export default function ClosingCta() {
             cada cena se convierte en un recuerdo que vale la pena vivir.
           </p>
           <div className="closing-cta__actions reveal reveal-delay-3">
-            <a href="tel:+527471234567" className="btn-call">
+            <a href="tel:+527541086431" className="btn-call">
               Llamar y Reservar
             </a>
             <a
