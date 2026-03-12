@@ -123,23 +123,12 @@ export default function About() {
           height: 80%;
           background: linear-gradient(180deg, transparent, rgba(138,158,106,0.3), transparent);
         }
-        .about__visual-placeholder {
-          text-align: center;
-          padding: 2rem;
-        }
-        .about__visual-placeholder .icon {
-          font-size: 4rem;
-          opacity: 0.4;
-          display: block;
-          margin-bottom: 1rem;
-        }
-        .about__visual-placeholder p {
-          font-family: var(--font-heading);
-          font-size: 1.3rem;
-          font-weight: 300;
-          font-style: italic;
-          color: var(--color-beige);
-          opacity: 0.6;
+        .about__logo {
+          width: 220px;
+          height: 220px;
+          object-fit: contain;
+          opacity: 0.88;
+          filter: drop-shadow(0 0 40px rgba(196,144,58,0.25));
         }
         @media (min-width: 640px) {
           .about__props { grid-template-columns: repeat(3, 1fr); }
@@ -223,12 +212,12 @@ export default function About() {
               </div>
             </div>
 
-            {/* Visual placeholder — reemplazar con <img> real cuando haya fotos */}
-            <div className="about__visual reveal reveal-delay-3" aria-hidden="true">
-              <div className="about__visual-placeholder">
-                <span className="icon">&#127807;</span>
-                <p>La experiencia Flama</p>
-              </div>
+            <div className="about__visual reveal reveal-delay-3">
+              <img
+                src="/logo.png"
+                alt="Flama Restaurante"
+                className="about__logo"
+              />
             </div>
 
           </div>
