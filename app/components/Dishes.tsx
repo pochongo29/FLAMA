@@ -19,6 +19,7 @@ interface Dish {
   badge?: string
   bgClass: string
   emoji: string
+  img?: string
 }
 
 const DISHES: Dish[] = [
@@ -30,6 +31,7 @@ const DISHES: Dish[] = [
     badge:   'Firma',
     bgClass: 'dish-bg-1',
     emoji:   '&#129385;',
+    img:     '/platillos/1.png',
   },
   {
     name:    'Pulpo a la Plancha',
@@ -39,6 +41,7 @@ const DISHES: Dish[] = [
     badge:   'Popular',
     bgClass: 'dish-bg-2',
     emoji:   '&#127839;',
+    img:     '/platillos/4.png',
   },
   {
     name:    'Salmon en Costra',
@@ -47,6 +50,7 @@ const DISHES: Dish[] = [
     tag:     'Del mar',
     bgClass: 'dish-bg-3',
     emoji:   '&#127843;',
+    img:     '/platillos/5.png',
   },
   {
     name:    'Costilla BBQ Flama',
@@ -56,6 +60,7 @@ const DISHES: Dish[] = [
     badge:   'Nuevo',
     bgClass: 'dish-bg-4',
     emoji:   '&#127858;',
+    img:     '/platillos/2.png',
   },
   {
     name:    'Carpaccio de Res',
@@ -64,6 +69,7 @@ const DISHES: Dish[] = [
     tag:     'Entrada',
     bgClass: 'dish-bg-5',
     emoji:   '&#127804;',
+    img:     '/platillos/3.png',
   },
   {
     name:    'Coulant de Chocolate',
@@ -135,6 +141,15 @@ export default function Dishes() {
           align-items: center;
           justify-content: center;
         }
+        .dish-card__img img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease;
+        }
+        .dish-card:hover .dish-card__img img { transform: scale(1.06); }
         .dish-card__img-label {
           position: absolute;
           font-size: 3.2rem;
@@ -221,11 +236,15 @@ export default function Dishes() {
             {DISHES.map((dish, i) => (
               <article key={dish.name} className={`dish-card reveal ${DELAY_CLASSES[i]}`}>
                 <div className={`dish-card__img ${dish.bgClass}`}>
-                  <span
-                    className="dish-card__img-label"
-                    aria-hidden="true"
-                    dangerouslySetInnerHTML={{ __html: dish.emoji }}
-                  />
+                  {dish.img ? (
+                    <img src={dish.img} alt={dish.name} loading="lazy" />
+                  ) : (
+                    <span
+                      className="dish-card__img-label"
+                      aria-hidden="true"
+                      dangerouslySetInnerHTML={{ __html: dish.emoji }}
+                    />
+                  )}
                   {dish.badge && (
                     <span className="dish-card__badge">{dish.badge}</span>
                   )}
