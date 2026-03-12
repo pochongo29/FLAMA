@@ -24,8 +24,8 @@ interface Dish {
 
 const DISHES: Dish[] = [
   {
-    name:    'Ribeye al Carbon',
-    desc:    'Corte prime sellado en las brasas, terminado con mantequilla de hierbas y flor de sal.',
+    name:    'Tomahawk',
+    desc:    'Corte tomahawk madurado en seco, sellado en brasas vivas con mantequilla de hierbas y flor de sal.',
     price:   '$480',
     tag:     'Principal',
     badge:   'Firma',
@@ -34,8 +34,8 @@ const DISHES: Dish[] = [
     img:     '/platillos/1.png',
   },
   {
-    name:    'Pulpo a la Plancha',
-    desc:    'Pulpo gallego asado, sobre pure de papa ahumada y aceite de pimenton.',
+    name:    'Camarones a la Alfredo',
+    desc:    'Camarones salteados al ajillo sobre fettuccine en salsa alfredo cremosa con parmesano añejo.',
     price:   '$320',
     tag:     'Del mar',
     badge:   'Popular',
@@ -53,8 +53,8 @@ const DISHES: Dish[] = [
     img:     '/platillos/5.png',
   },
   {
-    name:    'Costilla BBQ Flama',
-    desc:    'Costilla de res 12 horas al horno, glaseada con nuestra salsa secreta de la casa.',
+    name:    'Ribeye',
+    desc:    'Ribeye de res a punto perfecto, sellado en plancha de hierro con espárragos y papas rústicas.',
     price:   '$410',
     tag:     'Principal',
     badge:   'Nuevo',
@@ -63,10 +63,10 @@ const DISHES: Dish[] = [
     img:     '/platillos/2.png',
   },
   {
-    name:    'Carpaccio de Res',
-    desc:    'Laminado fino con trufa negra, parmesano viejo y aceite de oliva extra virgen.',
+    name:    'Hamburguesa Flama',
+    desc:    'Carne de res prime, queso cheddar derretido, cebolla caramelizada y salsa de la casa en brioche artesanal.',
     price:   '$210',
-    tag:     'Entrada',
+    tag:     'Principal',
     bgClass: 'dish-bg-5',
     emoji:   '&#127804;',
     img:     '/platillos/3.png',
