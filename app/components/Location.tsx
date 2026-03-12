@@ -180,7 +180,7 @@ export default function Location() {
             {/* Mapa embebido */}
             <div className="map-wrapper reveal" aria-label="Mapa de ubicacion de Flama Restaurante">
               <iframe
-                src="https://maps.google.com/maps?q=Av.+Lazaro+Cardenas+71+Chilpancingo+Guerrero+Mexico&output=embed&z=15"
+                src="https://maps.google.com/maps?q=17.5506,-99.5001&output=embed&z=17"
                 width="100%"
                 height="100%"
                 allowFullScreen

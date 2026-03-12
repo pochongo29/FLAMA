@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       'Cocina de fuego vivo, atmosfera de selva tropical y muebles de piel. Una experiencia gastronómica que no olvidaras. Plaza Cardenas, Chilpancingo.',
     images: [
       {
-        url: 'https://flamarestaurante.mx/og-image.jpg',
+        url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=630&fit=crop&q=85',
         width: 1200,
         height: 630,
         alt: 'Flama Restaurante — Chilpancingo, Guerrero',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Flama — Restaurante Premium en Chilpancingo',
     description:
       'Cocina de fuego vivo, atmosfera de selva tropical y muebles de piel. Plaza Cardenas, Chilpancingo, Guerrero.',
-    images: ['https://flamarestaurante.mx/og-image.jpg'],
+    images: ['https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=630&fit=crop&q=85'],
   },
   icons: {
     icon: '/logo.png',
