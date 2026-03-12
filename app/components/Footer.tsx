@@ -126,7 +126,7 @@ export default function Footer() {
               <div className="footer__tagline">Donde el fuego se convierte en arte</div>
               <div className="footer__socials" aria-label="Redes sociales">
                 {/* EDITAR: reemplaza los href con los links reales de tus redes */}
-                <a href="https://www.instagram.com/flamarestaurante" className="social-link" aria-label="Instagram de Flama" target="_blank" rel="noopener noreferrer">&#128247;</a>
+                <a href="https://www.instagram.com/flama.mx" className="social-link" aria-label="Instagram de Flama" target="_blank" rel="noopener noreferrer">&#128247;</a>
                 <a href="https://www.facebook.com/FlamaSteakHouse.MX"  className="social-link" aria-label="Facebook de Flama"  target="_blank" rel="noopener noreferrer">&#128100;</a>
                 <a href="#" className="social-link" aria-label="TikTok de Flama" rel="noopener">&#127926;</a>
               </div>
