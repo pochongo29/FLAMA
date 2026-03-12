@@ -159,7 +159,7 @@ export default function Footer() {
               <p className="footer__contact-label">Contacto &amp; Ubicacion</p>
               <p className="footer__contact-item">
                 <a href="tel:+527541086431" style={{ color: 'var(--color-amber)' }}>
-                  +52 747 123 4567
+                  +52 754 108 6431
                 </a>
               </p>
               <p className="footer__contact-item">
