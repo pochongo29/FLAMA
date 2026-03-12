@@ -15,6 +15,7 @@ interface GalleryItem {
   caption:   string
   ariaLabel: string
   bgClass:   string
+  img:       string
   wide?:     boolean
   tall?:     boolean
   delay:     string
@@ -23,59 +24,68 @@ interface GalleryItem {
 const ITEMS: GalleryItem[] = [
   {
     caption:   'Salón principal — luz ámbar, piel y selva',
-    ariaLabel: 'Salon principal de Flama con iluminacion ambar calida y vegetacion tropical',
+    ariaLabel: 'Salon principal con iluminacion ambar calida y vegetacion tropical',
     bgClass:   'gb-1',
+    img:       'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=600&fit=crop&q=85',
     wide:      true,
     delay:     '',
   },
   {
     caption:   'Vegetación tropical que respira dentro',
-    ariaLabel: 'Jardin interior con palmeras y vegetacion tropical del restaurante Flama',
+    ariaLabel: 'Vegetacion tropical exuberante en el interior del restaurante',
     bgClass:   'gb-2',
+    img:       'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=900&fit=crop&q=85',
     tall:      true,
     delay:     'reveal-delay-1',
   },
   {
     caption:   'Cada platillo, una obra de fuego',
-    ariaLabel: 'Detalle de presentacion de platillo principal en Flama',
+    ariaLabel: 'Presentacion premium de platillo principal en Flama',
     bgClass:   'gb-3',
+    img:       'https://images.unsplash.com/photo-1544025162-d76538bef3aa?w=600&h=500&fit=crop&q=85',
     delay:     'reveal-delay-2',
   },
   {
     caption:   'La mesa perfecta te espera',
-    ariaLabel: 'Mesa elegantemente servida bajo iluminacion cenital en Flama',
+    ariaLabel: 'Mesa elegantemente servida con iluminacion cenital calida',
     bgClass:   'gb-4',
+    img:       'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=500&fit=crop&q=85',
     delay:     'reveal-delay-3',
   },
   {
     caption:   'Maridaje para cada momento',
-    ariaLabel: 'Seleccion de vinos y cocteles artesanales en la barra de Flama',
+    ariaLabel: 'Cocteles artesanales y vinos seleccionados en la barra de Flama',
     bgClass:   'gb-5',
+    img:       'https://images.unsplash.com/photo-1551024709-8f23befc548e?w=600&h=500&fit=crop&q=85',
     delay:     'reveal-delay-1',
   },
   {
     caption:   'Un espacio donde el tiempo se detiene',
-    ariaLabel: 'Vista panoramica del salon de Flama con muebles de piel y vegetacion exuberante',
+    ariaLabel: 'Vista panoramica del salon con muebles de piel y vegetacion exuberante',
     bgClass:   'gb-6',
+    img:       'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=600&fit=crop&q=85',
     wide:      true,
     delay:     'reveal-delay-2',
   },
   {
     caption:   'El fuego que da vida a todo',
-    ariaLabel: 'Cocina de fuego vivo en Flama — el carbon como instrumento',
+    ariaLabel: 'Cocina de fuego vivo — el carbon como instrumento principal',
     bgClass:   'gb-7',
+    img:       'https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=500&fit=crop&q=85',
     delay:     'reveal-delay-3',
   },
   {
     caption:   'La noche empieza en Flama',
-    ariaLabel: 'Ambiente nocturno del restaurante Flama con luz ambar intima',
+    ariaLabel: 'Ambiente nocturno del bar con iluminacion ambar intima',
     bgClass:   'gb-8',
+    img:       'https://images.unsplash.com/photo-1552566626-52f8b828a9b6?w=600&h=500&fit=crop&q=85',
     delay:     'reveal-delay-4',
   },
   {
     caption:   'Madera, piel y naturaleza en cada rincón',
-    ariaLabel: 'Detalle de los materiales naturales de Flama — madera honey live-edge y cuero cafe',
+    ariaLabel: 'Detalle de materiales naturales — madera honey live-edge y cuero artesanal',
     bgClass:   'gb-9',
+    img:       'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&h=500&fit=crop&q=85',
     delay:     'reveal-delay-5',
   },
 ]
@@ -127,16 +137,15 @@ export default function Gallery() {
           cursor: pointer;
           isolation: isolate;
         }
-        .gallery__placeholder {
+        .gallery__img {
+          position: absolute;
+          inset: 0;
           width: 100%;
           height: 100%;
-          min-height: 180px;
-          display: flex;
-          align-items: flex-end;
-          padding: 1rem;
-          transition: transform 0.55s ease;
+          object-fit: cover;
+          transition: transform 0.65s ease;
         }
-        .gallery__item:hover .gallery__placeholder { transform: scale(1.04); }
+        .gallery__item:hover .gallery__img { transform: scale(1.06); }
         .gallery__item::after {
           content: attr(data-caption);
           position: absolute;
@@ -248,10 +257,11 @@ export default function Gallery() {
                 ].filter(Boolean).join(' ')}
                 data-caption={item.caption}
               >
-                <div
-                  className={`gallery__placeholder ${item.bgClass}`}
-                  role="img"
-                  aria-label={item.ariaLabel}
+                <img
+                  className="gallery__img"
+                  src={item.img}
+                  alt={item.ariaLabel}
+                  loading="lazy"
                 />
               </div>
             ))}
