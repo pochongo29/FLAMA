@@ -49,7 +49,7 @@ const ITEMS: GalleryItem[] = [
     caption:   'La mesa perfecta te espera',
     ariaLabel: 'Mesa elegantemente servida con iluminacion cenital calida',
     bgClass:   'gb-4',
-    img:       'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=500&fit=crop&q=85',
+    img:       'https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&h=500&fit=crop&q=85',
     delay:     'reveal-delay-3',
   },
   {
