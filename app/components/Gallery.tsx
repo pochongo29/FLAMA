@@ -42,7 +42,7 @@ const ITEMS: GalleryItem[] = [
     caption:   'Cada platillo, una obra de fuego',
     ariaLabel: 'Presentacion premium de platillo principal en Flama',
     bgClass:   'gb-3',
-    img:       'https://images.unsplash.com/photo-1544025162-d76538bef3aa?w=600&h=500&fit=crop&q=85',
+    img:       'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=500&fit=crop&q=85',
     delay:     'reveal-delay-2',
   },
   {
