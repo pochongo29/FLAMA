@@ -115,7 +115,7 @@ const schemaOrg = {
     'https://maps.google.com/?q=Plaza+Cardenas+Av+Lazaro+Cardenas+71+Chilpancingo+Guerrero',
   sameAs: [
     'https://www.instagram.com/flamarestaurante',
-    'https://www.facebook.com/flamarestaurante',
+    'https://www.facebook.com/FlamaSteakHouse.MX',
   ],
 }
 
