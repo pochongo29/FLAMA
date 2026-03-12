@@ -79,6 +79,7 @@ const DISHES: Dish[] = [
     badge:   'Postre',
     bgClass: 'dish-bg-6',
     emoji:   '&#127854;',
+    img:     '/platillos/6.png',
   },
 ]
 
