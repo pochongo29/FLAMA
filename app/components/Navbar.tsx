@@ -186,19 +186,18 @@ export default function Navbar() {
           </a>
 
           <div className="nav__links" role="list">
-            <a href="#about"    role="listitem">Nosotros</a>
-            <a href="#dishes"   role="listitem">Platillos</a>
-            <a href="#menu"     role="listitem">Menu</a>
-            <a href="#gallery"  role="listitem">Galeria</a>
-            <a href="#location" role="listitem">Ubicacion</a>
+            <a href="#about"          role="listitem">Nosotros</a>
+            <a href="#dishes"         role="listitem">Platillos</a>
+            <a href="#menu"           role="listitem">Menu</a>
+            <a href="#gallery"        role="listitem">Galeria</a>
+            <a href="#location"       role="listitem">Ubicacion</a>
+            <a href="#reservaciones"  role="listitem">Reservar</a>
           </div>
 
           <a
-            href={WA_URL}
+            href="#reservaciones"
             className="btn-primary nav__cta"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Reservar mesa por WhatsApp"
+            aria-label="Ir al formulario de reservaciones"
           >
             Reservar Mesa
           </a>
@@ -224,16 +223,15 @@ export default function Navbar() {
         role="dialog"
         aria-modal="true"
       >
-        <a href="#about"        onClick={close}>Nosotros</a>
-        <a href="#dishes"       onClick={close}>Platillos</a>
-        <a href="#menu"         onClick={close}>Menu</a>
-        <a href="#gallery"      onClick={close}>Galeria</a>
-        <a href="#testimonials" onClick={close}>Resenas</a>
-        <a href="#location"     onClick={close}>Ubicacion</a>
+        <a href="#about"          onClick={close}>Nosotros</a>
+        <a href="#dishes"         onClick={close}>Platillos</a>
+        <a href="#menu"           onClick={close}>Menu</a>
+        <a href="#gallery"        onClick={close}>Galeria</a>
+        <a href="#testimonials"   onClick={close}>Resenas</a>
+        <a href="#location"       onClick={close}>Ubicacion</a>
+        <a href="#reservaciones"  onClick={close}>Reservar</a>
         <a
-          href={WA_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#reservaciones"
           className="btn-primary"
           style={{ marginTop: '1rem' }}
           onClick={close}

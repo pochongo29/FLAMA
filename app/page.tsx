@@ -11,6 +11,7 @@ import Menu          from './components/Menu'
 import Gallery       from './components/Gallery'
 import Testimonials  from './components/Testimonials'
 import Location      from './components/Location'
+import Reservations  from './components/Reservations'
 import ClosingCta    from './components/ClosingCta'
 import Footer        from './components/Footer'
 import WhatsAppFab   from './components/WhatsAppFab'
@@ -29,6 +30,7 @@ export default function HomePage() {
         <Gallery />
         <Testimonials />
         <Location />
+        <Reservations />
         <ClosingCta />
       </main>
 

@@ -353,7 +353,7 @@ export default function Hero() {
             Ingredientes vivos, atmósfera íntima, momentos que perduran.
           </p>
           <div className="hero__ctas">
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a href="#reservaciones" className="btn-primary">
               Reservar Mesa
             </a>
             <a href="#menu" className="btn-secondary">
