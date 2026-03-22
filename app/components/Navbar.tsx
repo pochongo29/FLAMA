@@ -192,6 +192,7 @@ export default function Navbar() {
             <a href="#gallery"        role="listitem">Galeria</a>
             <a href="#location"       role="listitem">Ubicacion</a>
             <a href="#reservaciones"  role="listitem">Reservar</a>
+            <a href="#eventos"        role="listitem">Eventos Flama</a>
           </div>
 
           <a
@@ -230,6 +231,7 @@ export default function Navbar() {
         <a href="#testimonials"   onClick={close}>Resenas</a>
         <a href="#location"       onClick={close}>Ubicacion</a>
         <a href="#reservaciones"  onClick={close}>Reservar</a>
+        <a href="#eventos"        onClick={close}>Eventos Flama</a>
         <a
           href="#reservaciones"
           className="btn-primary"
